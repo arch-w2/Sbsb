@@ -1,0 +1,5675 @@
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+local u1 = getgenv()
+
+if not u1.LOADED then
+	local u2, v3, new, new2, new3, new4, spawn, wait2, delay, cancel, floor, min, max, find, getupvalue, getconstants, HttpService, PathfindingService, ReplicatedStorage, RunService, UserInputService, Players, TeleportService, Lighting, Debris, PlaceId, JobId, LocalPlayer, UserId, PlayerGui, u51, n1, u61, t5, t6, t7, u75, u76, Tiles, Terrain, Camera, Vehicles, SteakhouseCook, u94, u96, Sprint, ATM, ProgressBar, u104, StockTimes, JobData, SkillsList, u109, Char, Util, Tween, Data, u115, u116, u120, u202, Humanoid, HumanoidRootPart, Backpack, u209, u210, u211, u212, elapsed, t22, u230, u231, u232, u233, u234, u236, u237, u238, u239, t35, u250, u253, ImageButton, UIScale, u259, u260, u261, u262, u263, v266, v268, v269, v270, v271, v272, v273, u275, u277, s10
+
+	do
+		local fromOffset, ceil, Map, DoorClient
+
+		do
+			local SoundService, u77, u78, u79, Items, u90, SplashScreen, Net, u124, u125, u126, u127, u128, send, get, tween, DeathScreenHolder, set
+
+			do
+				local v81, v82
+
+				do
+					local v65, t8, s4
+
+					do
+						local t1
+
+						do
+							do
+								do
+									do
+										do
+											do
+												do
+													do
+														do
+															u2 = nil
+															v3 = nil
+															u1.LOADED = true
+
+															local _UDim2 = UDim2
+
+															fromOffset = _UDim2.fromOffset
+
+															local _ = _UDim2.fromScale
+														end
+
+														new = Instance.new
+														new2 = Vector2.new
+
+														local _CFrame = CFrame
+
+														new3 = _CFrame.new
+
+														local _ = _CFrame.lookAt
+													end
+
+													new4 = Vector3.new
+
+													local _ = TweenInfo.new
+												end
+
+												local _ = Ray.new
+												local _task = task
+
+												spawn = _task.spawn
+												wait2 = _task.wait
+												delay = _task.delay
+												cancel = _task.cancel
+											end
+
+											local _ = coroutine.yield
+											local _math = math
+
+											floor = _math.floor
+											min = _math.min
+											max = _math.max
+											ceil = _math.ceil
+										end
+
+										local _string = string
+										local _ = _string.sub
+										local _ = _string.format
+
+										find = _string.find
+									end
+
+									local _debug = debug
+
+									getupvalue = _debug.getupvalue
+
+									local _ = _debug.setconstant
+
+									getconstants = _debug.getconstants
+
+									local _ = _debug.traceback
+								end
+
+								if not clonefunction then
+									function clonefunction(p1)
+										return p1
+									end
+								end
+
+								if not replaceclosure then
+									replaceclosure = hookfunction
+								end
+
+								HttpService = game:GetService("HttpService")
+								PathfindingService = game:GetService("PathfindingService")
+								ReplicatedStorage = game:GetService("ReplicatedStorage")
+								RunService = game:GetService("RunService")
+								UserInputService = game:GetService("UserInputService")
+								Players = game:GetService("Players")
+								TeleportService = game:GetService("TeleportService")
+								Lighting = game:GetService("Lighting")
+								SoundService = game:GetService("SoundService")
+								Debris = game:GetService("Debris")
+
+								local _game = game
+
+								PlaceId = _game.PlaceId
+								JobId = _game.JobId
+								LocalPlayer = Players.LocalPlayer
+								UserId = LocalPlayer.UserId
+								LocalPlayer:WaitForChild("Backpack")
+								PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+								u51 = nil
+								n1 = 1
+								t1 = {
+									JumpDown = false,
+									SavedHistoryCFrame = nil,
+									TargetAim = nil,
+									TargetHistory = {},
+									AllATM = {},
+									AllDrawing = {
+										AllPlayerDrawing = {},
+										AllDroppedItemDrawing = {},
+										AllDrawingObject = {}
+									},
+									HackChip = nil
+								}
+
+								local v54 = false
+
+								t1.MovementSpoof = v54
+								t1.StaminaFarm = v54
+								t1.SnapSuccess = v54
+								t1.Panic = v54
+								t1.HackToolChip = "Smart Select"
+								t1.EncodedTable = {}
+								t1.DecodedTable = {}
+
+								local t2 = {}
+								local v56 = false
+
+								t2.getfenv = v56
+								t2.identifyexecutor = v56
+								t1.ConstantsToFind = t2
+							end
+
+							local t3 = {}
+							local v58 = true
+
+							t3.replicate_billboard_gui = v58
+							t3.replicate_stamina_bar = v58
+							t3.invalid_entry = v58
+							t1.Blacklisted_Network_Calls = t3
+							t1.Anticheat_Detection_Types = {
+								["Teleport detected"] = v58,
+								["Anti noclip triggered"] = v58,
+								["Fly detected"] = v58
+							}
+
+							local t4 = {}
+							local n2 = 255
+
+							t4.Common = Color3.fromRGB(n2, n2, n2)
+							t4.Uncommon = Color3.fromRGB(99, 255, 52)
+							t4.Rare = Color3.fromRGB(51, 170, 255)
+							t4.Epic = Color3.fromRGB(237, 44, 255)
+							t4.Legendary = Color3.fromRGB(255, 150, 0)
+							t4.Omega = Color3.fromRGB(255, 20, 51)
+							t1.RarityColors = t4
+						end
+
+						t1.BestPosOfATM = {
+							new3(114.51031494141, 254.19378662109, 463.86145019531),
+							new3(999.55877685547, 254.24514770508, -639.6962890625),
+							new3(178.98379516602, 254.34378051758, -238.21211242676),
+							new3(-225.10632324219, 254.19378662109, 486.38104248047),
+							new3(-595.68646240234, 257.04376220703, -160.08450317383),
+							new3(-508.29281616211, 255.50061035156, 187.78866577148),
+							new3(-131.89276123047, 254.15124511719, 102.13997650146),
+							new3(99.604286193848, 254.24377441406, -572.44427490234),
+							new3(-200.45555114746, 254.29382324219, -568.75128173828),
+							new3(-156.49746704102, 254.12615966797, 438.12802124023),
+							new3(-198.16770935059, 254.34375, -250.77191162109),
+							new3(452.83233642578, 254.79376220703, 34.578086853027),
+							new3(834.47357177734, 254.24212646484, -163.43013000488),
+							new3(85.536895751953, 254.34378051758, 166.73329162598)
+						}
+						t1.BlockedNodePositions = {
+							{
+								Size = new4(3.062, 10.603, 2.066),
+								Position = new4(-206.167, 256.606, -513.868)
+							},
+							{
+								Size = new4(3.062, 10.603, 3.066),
+								Position = new4(-216.601, 256.606, -513.368)
+							},
+							{
+								Size = new4(3.062, 10.603, 3.066),
+								Position = new4(-216.601, 256.606, -513.368)
+							},
+							{
+								Size = new4(3.787, 23.93, 13.992),
+								Position = new4(-245.512, 263.305, -437.676)
+							},
+							{
+								Size = new4(16.923, 10.274, 2.507),
+								Position = new4(935.625, 256.137, -552.628)
+							},
+							{
+								Size = new4(0.808, 10.961, 6.401),
+								Position = new4(-138.623, 256.612, 188.294)
+							},
+							{
+								Size = new4(14.904, 24.004, 20.496),
+								Position = new4(-95.403, 262.777, 530.404)
+							},
+							{
+								Size = new4(15, 9.693, 15.285),
+								Position = new4(65.543, 255.097, 397.31)
+							},
+							{
+								Size = new4(7.111, 16.594, 29.929),
+								Position = new4(855.223, 259.297, -169.371)
+							},
+							{
+								Size = new4(2, 40, 150),
+								Position = new4(-502.861, 251.052, 160.236)
+							},
+							{
+								Size = new4(2, 40, 150),
+								Position = new4(-563, 257, 129)
+							},
+							{
+								Size = new4(21.61, 29.176, 16.516),
+								Position = new4(-186.702, 265.445, -239.501)
+							},
+							{
+								Size = new4(10.461, 23.671, 28.489),
+								Position = new4(-134.682, 259.237, 322.806)
+							},
+							{
+								Size = new4(11.007, 25.039, 7.443),
+								Position = new4(87.996, 263.573, 160.548)
+							},
+							{
+								Size = new4(25.706, 14.869, 7.542),
+								Position = new4(-482.11, 259.728, 147.729)
+							},
+							{
+								Size = new4(7.706, 14.869, 7.542),
+								Position = new4(-489.09, 259.728, 159.865)
+							},
+							{
+								Size = new4(7.706, 14.869, 6.542),
+								Position = new4(-496.319, 259.728, 172.435)
+							},
+							{
+								Size = new4(7.706, 14.869, 5.542),
+								Position = new4(-503.548, 259.728, 185.004)
+							},
+							{
+								Size = new4(10.125, 3.089, 9.516),
+								Position = new4(53.69, 256.475, -505.232)
+							},
+							{
+								Size = new4(10.125, 3.089, 53.639),
+								Position = new4(53.69, 256.475, -543.525)
+							},
+							{
+								Size = new4(10.125, 2.089, 10.386),
+								Position = new4(175.985, 256.475, -505.805)
+							},
+							{
+								Size = new4(10.125, 2.089, 52.413),
+								Position = new4(175.985, 256.475, -543.795)
+							}
+						}
+						t1.JobPositions = {
+							Steak1 = new4(-228.423172, 255.251801, 330.278656),
+							Steak2 = new4(-230.680832, 256.501099, 330.690674),
+							Steak3 = new4(-279.59963989258, 256.34902954102, 342.25061035156),
+							ShelfStockApply = new4(133.074203, 255.315063, 208.3764049),
+							ShelfStock2 = new4(96.0496292, 255.467148, 207.029495),
+							JanitorApply = new4(111.83196258545, 255.35958862305, -310.61776733398)
+						}
+						t1.HackToolList = {
+							{
+								Tool = "HackToolBasic",
+								Skill = "HackTool_Basic"
+							},
+							{
+								Tool = "HackToolPro",
+								Skill = "HackTool_Pro"
+							},
+							{
+								Tool = "HackToolUltimate",
+								Skill = "HackTool_Ultimate"
+							},
+							{
+								Tool = "HackToolQuantum",
+								Skill = "HackTool_Quantum"
+							}
+						}
+						t1.MeshIdCache = {}
+						t1.StatsCache = {}
+						t1.AllItemsCache = {}
+						t1.ToolHashes = {}
+						t1.AutoShotFiring = false
+						u61 = t1
+						t5 = {}
+						t6 = {}
+						t7 = {}
+						v65 = workspace:GetAttribute("HashKey") or "default"
+						t8 = {
+							"damage",
+							"speed",
+							"range",
+							"cone_angle",
+							"ragdoll_chance",
+							"destructive",
+							"knockback_force",
+							"weapon_type",
+							"durability_mod",
+							"damage_type",
+							"Description",
+							"ImageId",
+							"RarityName",
+							"RarityPrice",
+							"Durability",
+							"DisplayName",
+							"Locked",
+							"CanCrouch",
+							"DisableInVehicle",
+							"ItemGUID",
+							"fire_rate",
+							"accuracy",
+							"MagSize",
+							"AmmoType",
+							"reload_time",
+							"automatic",
+							"Recoil",
+							"Multishot",
+							"SingleLoad",
+							"ReloadMultiplierOffset",
+							"KnockbackForce",
+							"RagdollChance",
+							"BulletSpeed",
+							"Zoom",
+							"SniperScope",
+							"throw_speed",
+							"Destructive",
+							"Weak",
+							"Explodes",
+							"explode_damage",
+							"ExplodeRadius",
+							"ExplodeDelay",
+							"ExplodeKnockback",
+							"AreaDamage",
+							"AreaDamageRadius",
+							"AreaDamageAmount",
+							"AreaDamageLength",
+							"Bounces",
+							"CanPour",
+							"LeavesProp",
+							"ThrowDebounceTime",
+							"HealthRestoreAmount",
+							"StaminaRestoreAmount",
+							"EffectDuration",
+							"SpeedMultiplier",
+							"StaminaConsumeMultiplier",
+							"DamageTakenMultiplier",
+							"HealthRegenMultiplier",
+							"MopCashPercentageIncrease",
+							"MopSpeedPercentageIncrease",
+							"FishingItem",
+							"FishRewardBias",
+							"Power",
+							"MaxDistance",
+							"MaxFresh",
+							"MinFresh",
+							"MaxWeight",
+							"MinWeight",
+							"FarmItem",
+							"IsCookable",
+							"Health",
+							"PedalingEnabled",
+							"PreRigged",
+							"DoesWheelie",
+							"SpeedometerEnabled",
+							"JumpPower",
+							"IgnoreDisableTools",
+							"BlastProtection",
+							"cosmetic_type",
+							"cosmetic_folder_origin_name"
+						}
+
+						local s1 = "OptionColor"
+						local s2 = "ImageColor"
+						local s3 = "DoNotReplicateChildren"
+
+						s4 = "JobTool"
+
+						local s5 = "UnequipWhenRagdolling"
+
+						t8[81] = s1
+						t8[82] = s2
+						t8[83] = s3
+						t8[84] = s4
+						t8[85] = s5
+					end
+
+					for _, v in next, t8 do
+						local v74 = v65 .. (function(p2)
+							local n3 = 5381
+							local n4 = 1
+
+							for i = n4, #p2, n4 do
+								n3 = (n3 * 5 + n3 + string.byte(p2, i)) % 4294967295
+							end
+
+							return tostring(n3)
+						end)(s4)
+
+						u61.DecodedTable[v74] = v
+						u61.EncodedTable[v] = v74
+					end
+
+					pcall(function()
+						-- upvalues: u61 (ref), ReplicatedStorage (ref)
+						local Items2 = ReplicatedStorage:FindFirstChild("Items")
+
+						if Items2 then
+							for _, v in next, Items2:GetChildren() do
+								if v:IsA("Folder") then
+									for _, v2 in next, v:GetChildren() do
+										if v2:IsA("Tool") or v2:IsA("Model") then
+											local Attributes = v2:GetAttributes()
+											local t9 = {
+												n = Attributes.DisplayName or v2.Name,
+												i = v2.Name,
+												c = v.Name,
+												d = Attributes.Description,
+												img = Attributes.ImageId,
+												rt = Attributes.RarityName,
+												dm = Attributes.damage,
+												sp = Attributes.speed,
+												rn = Attributes.range,
+												du = Attributes.Durability,
+												mc = Attributes.MopCashPercentageIncrease,
+												ms = Attributes.MopSpeedPercentageIncrease
+											}
+
+											for _, v4 in next, v2:GetDescendants() do
+												if v4:IsA("MeshPart") and v4.MeshId ~= "" then
+													u61.MeshIdCache[tostring(v4.MeshId)] = t9
+												end
+											end
+
+											if t9.dm then
+												u61.StatsCache[t9.dm .. "|" .. tostring(t9.sp) .. "|" .. tostring(t9.rn) .. "|" .. tostring(t9.du)] = t9
+											end
+
+											if t9.mc then
+												u61.StatsCache["m|" .. tostring(t9.mc) .. "|" .. tostring(t9.ms)] = t9
+											end
+
+											table.insert(u61.AllItemsCache, t9)
+										end
+									end
+								end
+							end
+						end
+					end)
+					u75 = nil
+					u76 = nil
+					u77 = nil
+					u78 = nil
+					u79 = nil
+
+					local Modules = ReplicatedStorage:FindFirstChild("Modules")
+
+					v81 = Modules and Modules:FindFirstChild("Game")
+					v82 = Modules and Modules:FindFirstChild("Core")
+					Items = ReplicatedStorage:FindFirstChild("Items")
+					Map = workspace:FindFirstChild("Map")
+					Tiles = Map:WaitForChild("Tiles")
+					Terrain = workspace:FindFirstChild("Terrain")
+					Camera = workspace:FindFirstChild("Camera")
+					Vehicles = workspace:FindFirstChild("Vehicles")
+
+					local _require = require
+
+					_require(v81.ItemCustomization.UpdateCosmetics)
+					_require(v81.ItemCustomization.ValidCosmeticTypes)
+					u90 = _require(v81.CharacterCreator.CharacterCreator)
+					SplashScreen = require(v81.SplashScreen)
+					SteakhouseCook = require(v81.Jobs.SteakhouseCook)
+
+					local _require2 = require
+
+					_require2(v81.Inventory.Recovery)
+					u94 = _require2(v81.DroppedItem)
+
+					local _require3 = require
+
+					_require3(v81.UI.BuyPromptUI)
+					u96 = _require3(v81.Inventory.ItemUtils)
+				end
+
+				local Hotbar = require(v81.Inventory.Hotbar)
+
+				Sprint = require(v81.Sprint)
+				ATM = require(v81.ATM.ATM)
+				DoorClient = require(v81.DoorClient)
+
+				local Ragdoll = require(v81.Ragdoll)
+
+				ProgressBar = require(v81.UI.ProgressBar)
+
+				local _require = require
+
+				_require(v81.Minigames.SliderMinigame)
+				u104 = _require(v81.Jobs.ShelfStocking)
+				StockTimes = require(v81.StockTimes)
+				JobData = require(v81.Jobs.JobData)
+				SkillsList = require(v81.Skills.SkillsList)
+
+				local _require4 = require
+
+				_require4(v81.Home.Home)
+				u109 = _require4(v81.VehicleSystem.Vehicle)
+				Net = require(v82.Net)
+				Char = require(v82.Char)
+				Util = require(v82.Util)
+				Tween = require(v82.Tween)
+				Data = require(v82.Data)
+				u115 = new("BindableEvent")
+				u116 = false
+
+				local TopRightHud = PlayerGui:WaitForChild("TopRightHud")
+
+				if TopRightHud then
+					TopRightHud:WaitForChild("Holder")
+				end
+
+				for _, v in next, getconnections(LocalPlayer.Idled) do
+					if not v.Disable then
+						if v.Disconnect then
+							v:Disconnect()
+						end
+					else
+						v:Disable()
+					end
+				end
+
+				function u61.WaitForPing()
+					-- upvalues: max (ref), LocalPlayer (ref), wait2 (ref)
+					local NetworkPing = LocalPlayer:GetNetworkPing()
+
+					return wait2(max(0.2, NetworkPing * 2))
+				end
+				function u61.Connect(p3, p4)
+					return (p3:Connect(p4))
+				end
+				function u61.AddThread(p5, p6)
+					-- upvalues: wait2 (ref)
+					if p5 then
+						return function()
+							-- upvalues: p5 (ref), wait2 (ref), p6 (ref)
+							while wait2(p6) do
+								xpcall(p5, warn)
+							end
+						end
+					end
+				end
+				function u61.IsAlive(p7)
+					if p7 then
+						local Humanoid2 = p7:FindFirstChildOfClass("Humanoid")
+
+						if Humanoid2 then
+							return Humanoid2.Health > 0
+						end
+
+						return
+					end
+				end
+				function u61.IsBehindWall(p8, p9)
+					-- upvalues: u61 (ref), u77 (ref)
+					if p8 and p9 then
+						local t10 = {}
+
+						if u77 then
+							table.insert(t10, u77)
+						end
+
+						local TargetAim = u61.TargetAim
+
+						if TargetAim then
+							table.insert(t10, TargetAim)
+						end
+
+						local raycastParams = RaycastParams.new()
+
+						raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+						raycastParams.FilterDescendantsInstances = t10
+
+						return workspace:Raycast(p8, p9 - p8, raycastParams) ~= nil
+					end
+				end
+				function u61.GetDistanceRoot(p10)
+					-- upvalues: u78 (ref)
+					if typeof(p10) ~= "Instance" then
+						if typeof(p10) ~= "Vector3" then
+							if typeof(p10) ~= "CFrame" then
+								return 0
+							end
+
+							return (p10.Position - u78.Position).Magnitude
+						end
+
+						return (p10 - u78.Position).Magnitude
+					end
+
+					if not p10:IsA("BasePart") then
+						if not p10:IsA("Model") then
+							return 0
+						end
+
+						return (p10:GetPivot().Position - u78.Position).Magnitude
+					end
+
+					return (p10.Position - u78.Position).Magnitude
+				end
+				function u61.GetDistanceStart(p11, p12)
+					if typeof(p11) ~= "Vector3" or typeof(p12) ~= "Vector3" then
+						if typeof(p11) ~= "Vector2" or typeof(p12) ~= "Vector2" then
+							return math.huge
+						end
+
+						return (p11 - p12).Magnitude
+					end
+
+					return (p11 - p12).Magnitude
+				end
+				function u61.FindClosest(p13, p14, p15, p16)
+					if p13 and p14 and p15 then
+						if typeof(p13) == "table" then
+							local v364 = nil
+							local huge = math.huge
+
+							for _, v in next, p13 do
+								local vPosition = nil
+								local v369 = typeof(v)
+								local s6
+
+								if v369 ~= "Instance" then
+									s6 = "CFrame"
+
+									if v369 ~= s6 then
+										s6 = "Vector3"
+
+										if v369 ~= s6 then
+											s6 = v369 == "table" and v.Position
+
+											if s6 then
+												vPosition = v.Position
+											end
+										else
+											vPosition = v
+										end
+									else
+										vPosition = v.Position
+									end
+								else
+									s6 = not v:IsA("BasePart")
+
+									if s6 then
+										if not v:IsA("Model") then
+											s6 = v:FindFirstAncestorOfClass("Model") or v:FindFirstAncestorOfClass("BasePart")
+
+											if s6 then
+												if not s6:IsA("BasePart") then
+													local ok, result = pcall(function()
+														-- upvalues: s6 (ref)
+														return s6:GetPivot().Position
+													end)
+
+													if ok then
+														vPosition = result
+													end
+												else
+													vPosition = s6.Position
+												end
+											end
+										else
+											local result
+
+											s6, result = pcall(function()
+												-- upvalues: v (ref)
+												return v:GetPivot().Position
+											end)
+
+											if s6 then
+												vPosition = result
+											end
+										end
+									else
+										vPosition = v.Position
+									end
+								end
+
+								if vPosition and p14(v) then
+									local Magnitude = (vPosition - p15).Magnitude
+
+									if Magnitude < (typeof(p16) == "number" and p16 or huge) then
+										huge = Magnitude
+										v364 = v
+									end
+								end
+							end
+
+							return v364
+						end
+
+						return
+					end
+				end
+				function u61.WorldToScreen(p17)
+					-- upvalues: Camera (ref)
+					local v376 = typeof(p17) == "Instance" and p17.Position or p17
+
+					return Camera:WorldToViewportPoint(v376)
+				end
+				function u61.HopServer(p18)
+					-- upvalues: wait2 (ref), HttpService (ref), PlaceId (ref), TeleportService (ref)
+					local u378 = p18 or 1
+					local t11 = {}
+					local s7 = ""
+					local hour = os.date("!*t").hour
+
+					if not pcall(function()
+						-- upvalues: HttpService (ref), t11 (ref)
+						t11 = HttpService:JSONDecode(readfile("YenixHopServer.json"))
+					end) then
+						table.insert(t11, hour)
+						writefile("YenixHopServer.json", HttpService:JSONEncode(t11))
+					end
+
+					local function u382()
+						-- upvalues: PlaceId (ref), hour (ref), wait2 (ref), u378 (ref), t11 (ref), s7 (ref), HttpService (ref), TeleportService (ref)
+						local v1119 = if s7 == "" then HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")) else HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Asc&limit=100&cursor=" .. s7))
+						local s8 = ""
+
+						if v1119.nextPageCursor and v1119.nextPageCursor ~= "null" and v1119.nextPageCursor ~= nil then
+							s7 = v1119.nextPageCursor
+						end
+
+						local n5 = 0
+
+						for _, v in pairs(v1119.data) do
+							local v1124 = true
+
+							s8 = tostring(v.id)
+
+							if u378 ~= 1 then
+								if tonumber(v.players) < 5 then
+									for _, v5 in pairs(t11) do
+										if n5 == 0 then
+											if tonumber(hour) ~= tonumber(v5) then
+												pcall(function()
+													-- upvalues: hour (ref), t11 (ref)
+													delfile("YenixHopServer.json")
+													t11 = {}
+													table.insert(t11, hour)
+												end)
+											end
+										elseif s8 == tostring(v5) then
+											v1124 = false
+										end
+
+										n5 += 1
+									end
+
+									if v1124 == true then
+										table.insert(t11, s8)
+										wait2()
+										pcall(function()
+											-- upvalues: wait2 (ref), s8 (ref), t11 (ref), TeleportService (ref), PlaceId (ref), HttpService (ref)
+											writefile("YenixHopServer.json", HttpService:JSONEncode(t11))
+											wait2()
+											TeleportService:TeleportToPlaceInstance(PlaceId, s8, game.Players.LocalPlayer)
+										end)
+										wait2(4)
+									end
+								end
+							elseif tonumber(v.maxPlayers) > tonumber(v.playing) then
+								for _, v6 in pairs(t11) do
+									if n5 == 0 then
+										if tonumber(hour) ~= tonumber(v6) then
+											pcall(function()
+												-- upvalues: hour (ref), t11 (ref)
+												delfile("YenixHopServer.json")
+												t11 = {}
+												table.insert(t11, hour)
+											end)
+										end
+									elseif s8 == tostring(v6) then
+										v1124 = false
+									end
+
+									n5 += 1
+								end
+
+								if v1124 == true then
+									table.insert(t11, s8)
+									wait2()
+									pcall(function()
+										-- upvalues: TeleportService (ref), HttpService (ref), t11 (ref), PlaceId (ref), s8 (ref)
+										writefile("YenixHopServer.json", HttpService:JSONEncode(t11))
+										wait()
+										TeleportService:TeleportToPlaceInstance(PlaceId, s8, game.Players.LocalPlayer)
+									end)
+									wait2(4)
+								end
+							end
+						end
+					end
+
+					while wait2() do
+						pcall(function()
+							-- upvalues: s7 (ref), u382 (ref)
+							u382()
+
+							if s7 ~= "" then
+								u382()
+							end
+						end)
+					end
+				end
+				function u61.GetItemRarity(p19)
+					-- upvalues: Items (ref)
+					local v384 = Items:FindFirstChild(p19:GetAttribute("item_type"))
+
+					if v384 then
+						local p19Name = v384:FindFirstChild(p19.Name)
+
+						if p19Name then
+							return p19Name:GetAttribute("RarityName") or "Common"
+						end
+
+						return "Common"
+					end
+
+					return "Common"
+				end
+				function u61.GetAttributeSafe(p20, p21)
+					-- upvalues: u61 (ref)
+					local p21_2 = p20:GetAttribute(p21)
+
+					if p21_2 == nil then
+						local v389 = u61.EncodedTable[p21]
+
+						if not v389 then
+							return nil
+						end
+
+						return p20:GetAttribute(v389)
+					end
+
+					return p21_2
+				end
+				function u61.DrawObject(p22, p23)
+					-- upvalues: u61 (ref)
+					local drawing = Drawing.new(p22)
+
+					if drawing then
+						u61.AllDrawing.AllDrawingObject[drawing] = true
+
+						for k, v in pairs(p23) do
+							drawing[k] = v
+						end
+
+						return drawing
+					end
+				end
+				function u61.FindVehicle()
+					-- upvalues: UserId (ref), Vehicles (ref)
+					for _, v in next, Vehicles:GetChildren() do
+						if v:GetAttribute("OwnerUserId") == UserId then
+							return v
+						end
+					end
+				end
+				function u61.GetATMStatus(p24)
+					-- upvalues: ATM (ref)
+					local v398 = ATM.class.objects[p24]
+
+					if v398 then
+						return (v398.states.disabled.get())
+					end
+				end
+
+				u120 = new("Part", workspace)
+
+				local n6 = 2
+
+				u120.Size = new4(n6, n6, n6)
+
+				local n7 = 0
+
+				u120.CFrame = new3(n7, 1500000, n7)
+
+				local v123 = true
+
+				u120.Anchored = v123
+				v123(function()
+					-- upvalues: Net (ref), u1 (ref), getupvalue (ref), getconstants (ref), u75 (ref), u61 (ref)
+					if not shared.SecurityBreakdown then
+						local v399 = (function()
+							-- upvalues: u61 (ref), getupvalue (ref), Net (ref), getconstants (ref)
+							local ok, result = pcall(getupvalue, Net.send, 2)
+
+							if not ok or not result or typeof(result) ~= "function" then
+								return
+							end
+
+							for k, _ in next, u61.ConstantsToFind do
+								local v1133 = false
+
+								for _, v in next, getconstants(result) do
+									if v == k then
+										v1133 = true
+
+										break
+									end
+								end
+
+								if not v1133 then
+									return nil
+								end
+
+								u61.ConstantsToFind[k] = true
+							end
+
+							if u61.ConstantsToFind.getfenv and u61.ConstantsToFind.identifyexecutor then
+								return result
+							end
+
+							return nil
+						end)()
+
+						if not v399 then
+							if not shared.SecurityBreakdown then
+								shared.SecurityBreakdown = false
+
+								return
+							end
+
+							return
+						end
+
+						replaceclosure(v399, function(p25, p26, p27, p28, ...)
+							return p25(p26, p27, p28, ...)
+						end)
+
+						local t12 = {
+							Send1 = clonefunction(Net.send),
+							Get2 = clonefunction(Net.get)
+						}
+
+						u75 = t12
+
+						function t12.send(...)
+							-- upvalues: u75 (ref), u1 (ref), u61 (ref)
+							local v1140 = select(1, ...)
+
+							if v1140 == "crashed_car" and u1.NoCrashActive then
+								return
+							end
+
+							if typeof(v1140) == "string" then
+								local _ = u61.Blacklisted_Network_Calls[v1140]
+							end
+
+							return u75.Send1(...)
+						end
+						function t12.get(...)
+							-- upvalues: u75 (ref), u61 (ref)
+							local v1142 = select(1, ...)
+
+							if typeof(v1142) == "string" then
+								local _ = u61.Blacklisted_Network_Calls[v1142]
+							end
+
+							return u75.Get2(...)
+						end
+
+						shared.SecurityBreakdown = true
+					end
+				end)
+
+				repeat
+					wait2()
+				until u75 and (u75.send or u75.get) or shared.SecurityBreakdown
+
+				function u124(p29, p30, p31)
+					local v404 = p30 ^ 2 - p29 * 4 * p31
+
+					if v404 >= 0 then
+						local v405 = math.sqrt(v404)
+						local n8 = 2
+
+						return (-p30 - v405) / (n8 * p29), (-p30 + v405) / (n8 * p29)
+					end
+
+					return nil, nil
+				end
+				function u125(p32, p33, p34)
+					-- upvalues: u124 (ref)
+					local v410, v411 = u124(p33:Dot(p33) / 4, p33:Dot(p32) - p34 ^ 2, p32:Dot(p32))
+
+					if v410 and v411 then
+						if v410 > 0 and v410 < v411 then
+							return math.sqrt(v410)
+						end
+
+						if v411 > 0 and v411 < v410 then
+							return math.sqrt(v411)
+						end
+					end
+
+					return 0
+				end
+				function u126(p35, p36)
+					return p35 * 0.01 * p36 ^ 2
+				end
+				function u127(_, p38, p39, p40, p41)
+					-- upvalues: u126 (ref)
+					return p38 + p39 * p40 + u126(p41, p40)
+				end
+				function u128(p42, p43, p44)
+					-- upvalues: u61 (ref)
+					local v422 = u61.TargetHistory[p42]
+
+					if v422 and #v422 >= 1 then
+						if #v422 ~= 1 then
+							if #v422 ~= 2 then
+								if #v422 < 3 then
+									return Vector3.zero
+								end
+
+								local v423 = v422[#v422 - 2]
+								local v424 = v422[#v422 - 1]
+								local v425 = v422[#v422]
+								local v426 = math.max(v424.time - v423.time, 1E-06)
+								local v427 = math.max(v425.time - v424.time, 1E-06)
+								local v428 = (v424.pos - v423.pos) / v426
+								local v429 = (v425.pos - v424.pos) / v427
+								local v430 = math.max(v426 + v427, 1E-06)
+								local v431 = (v429 - v428) / v430
+
+								if v431.Magnitude <= 500 then
+									local v432 = v427 / v430
+
+									return v429 * v432 + v428 * (1 - v432) + v431 * v427 * 0.5
+								end
+
+								return (v428 + v429) / 2
+							end
+
+							local v433 = v422[1]
+							local v434 = v422[2]
+							local v435 = math.max(v434.time - v433.time, 1E-06)
+
+							return (v434.pos - v433.pos) / v435
+						end
+
+						local v436 = v422[1]
+						local v437 = math.max(p44 - v436.time, 1E-06)
+
+						return (p43 - v436.pos) / v437
+					end
+
+					return Vector3.zero
+				end
+
+				send = Net.send
+
+				function Net.send(...)
+					-- upvalues: u61 (ref), u79 (ref), new4 (ref), Char (ref), Debris (ref), u128 (ref), u76 (ref), new3 (ref), LocalPlayer (ref), u1 (ref), u78 (ref), send (ref), u125 (ref), u77 (ref), u127 (ref)
+					local t13 = { ... }
+
+					if t13[1] == "crashed_car" and u1.NoCrashActive then
+						return
+					end
+
+					if t13[1] ~= "leave_character_creator" or u76 ~= "GodMode" then
+						if t13[1] == "shoot_gun" and (u1.AimAssist or u1.AutoShot) and u61.TargetAim and u77 and u78 and u79 and u61.IsAlive(u77) then
+							local TargetAim = u61.TargetAim
+
+							if TargetAim then
+								local v440 = TargetAim:FindFirstChild(u1.SelectPart or "Head") or (TargetAim:FindFirstChild("Head") or TargetAim:FindFirstChildWhichIsA("BasePart"))
+
+								if v440 then
+									local Position = u77:GetPivot().Position
+									local Position2 = v440:GetPivot().Position
+									local v443 = Position2 - Position
+									local n9 = 0
+									local v445 = new4(n9, -workspace.Gravity, n9)
+									local NetworkPing = LocalPlayer:GetNetworkPing()
+									local v447 = u125(v443, v445, 1000)
+									local v448 = u128(TargetAim, Position, tick())
+									local v449 = u127(Position, Position2, v448, v447 + NetworkPing, v445)
+									local v450 = Char.get_tool()
+									local v451 = v450 and v450:GetAttribute("AmmoType") == "shotgun"
+									local v452 = u1.WallBang and (v450 and (v450:GetAttribute("AmmoType") ~= "shotgun" and u61.IsBehindWall(Position, v449)))
+									local v453 = v451 and new3(Position, v449)
+
+									if not v453 then
+										v453 = v452
+
+										if v453 then
+											local v454 = new3
+											local _math = math
+
+											v453 = v454(_math.huge, _math.huge, _math.huge)
+										end
+
+										if not v453 then
+											v453 = new3(Position, v449)
+										end
+									end
+
+									t13[3] = v453
+
+									for _, v in pairs(t13[4]) do
+										for _, v7 in pairs(v) do
+											local n10 = 0
+
+											v7.Normal = new4(n10, 1, n10)
+											v7.Position = v449
+											v7.Instance = v440
+										end
+									end
+
+									if u1.MultiShot then
+										send(table.unpack(t13))
+									end
+
+									local Magnitude = (Position2 - Position).Magnitude
+
+									if Magnitude > 0.1 then
+										local Part = Instance.new("Part", workspace)
+										local n11 = 0.02
+
+										Part.Size = new4(n11, n11, Magnitude)
+
+										local n12 = 0
+
+										Part.CFrame = new3(Position, Position2) * new3(n12, n12, -Magnitude / 2)
+										Part.Material = Enum.Material.Neon
+										Part.CanCollide = false
+										Part.Anchored = true
+										Debris:AddItem(Part, 0.4)
+									end
+								end
+							end
+						end
+
+						return send(unpack(t13))
+					end
+				end
+
+				get = Net.get
+
+				function Net.get(...)
+					-- upvalues: u61 (ref), u1 (ref), get (ref)
+					local t14 = { ... }
+
+					if t14[1] ~= "pickup_dropped_item" or not u1.AutoPickDroppedItem or not u1.BlacklistPickDroppedItem then
+						return get(unpack(t14))
+					end
+
+					local v466 = t14[2]
+
+					if v466.Name ~= "Money" then
+						if not table.find(u1.BlacklistPickDroppedItem, u61.GetItemRarity(v466) or "Common") then
+							return
+						end
+
+						return get(...)
+					end
+
+					return get(...)
+				end
+
+				tween = Util.tween
+
+				function Util.tween(p45, p46, p47)
+					-- upvalues: tween (ref)
+					if p45 and p45:IsA("NumberValue") and p47 and p47.Value ~= nil then
+						p45.Value = p47.Value
+					end
+
+					return tween(p45, p46, p47)
+				end
+
+				DeathScreenHolder = PlayerGui.DeathScreen.DeathScreenHolder
+				u61.Connect(DeathScreenHolder.Frame.RespawnButtonFrame.RespawnButton.TextLabel:GetPropertyChangedSignal("Text"), function()
+					-- upvalues: u75 (ref), u1 (ref), DeathScreenHolder (ref)
+					if u1.AutoRespawn and DeathScreenHolder.Visible and DeathScreenHolder.Frame.RespawnButtonFrame.RespawnButton.TextLabel.Text == "Respawn" then
+						u75.send("death_screen_request_respawn")
+					end
+				end)
+				set = Ragdoll.is_ragdolling.set
+
+				function Ragdoll.is_ragdolling.set(p48)
+					-- upvalues: u75 (ref), u1 (ref), set (ref)
+					if not p48 or not u1.AntiRagdoll then
+						return set(p48)
+					end
+
+					u75.send("end_ragdoll_early")
+					u75.send("clear_ragdoll")
+
+					return nil
+				end
+
+				getfenv(Hotbar.loaded).get_max_items = function(_)
+					return 10
+				end
+
+				local u134 = getupvalue(Sprint.consume_stamina, 2)
+				local sprint_bar = u134.sprint_bar
+
+				if sprint_bar then
+					u134 = sprint_bar.update
+
+					function sprint_bar.update(...)
+						-- upvalues: u134 (ref), u1 (ref)
+						local v472 = not u1.InfiniteStamina
+
+						if v472 then
+							return u134(...)
+						end
+
+						return v472(function()
+							return 1
+						end)
+					end
+				end
+
+				local u136 = nil
+
+				hookmetamethod(game, "__index", function(p50, p51)
+					-- upvalues: u61 (ref), u136 (ref), u78 (ref), u77 (ref), Char (ref), u1 (ref)
+					if checkcaller() or not u1.AntiAimbot or p51 ~= "CFrame" or p50 ~= u78 or not u61.IsAlive(u77) or Char.get_hum():GetAttribute("HasBeenDowned") or not u61.SavedHistoryCFrame then
+						return u136(p50, p51)
+					end
+
+					return u61.SavedHistoryCFrame
+				end)
+			end
+
+			local u137 = new("BindableEvent")
+
+			if PlayerGui:FindFirstChild("CharacterCreator") and PlayerGui:FindFirstChild("CharacterCreator").Enabled or LocalPlayer:GetAttribute("InSplashScreen") then
+				local InSplashScreen = LocalPlayer:GetAttribute("InSplashScreen")
+
+				if InSplashScreen then
+					local v140, v141, v144, v147, v152, v153, v154, v155
+
+					do
+						local v149, v150, v151
+
+						do
+							local v148
+
+							do
+								local v146
+
+								do
+									local v145
+
+									do
+										do
+											local v143
+
+											do
+												do
+													local v142
+
+													do
+														do
+															do
+																do
+																	do
+																		InSplashScreen = PlayerGui:FindFirstChild("SplashScreenGui")
+
+																		if InSplashScreen then
+																			InSplashScreen.Enabled = false
+																		end
+
+																		local Sound = SoundService:FindFirstChild("Sound")
+
+																		if Sound then
+																			Sound:Destroy()
+																		end
+																	end
+
+																	v140 = new("ScreenGui")
+																	v141 = new("Frame")
+																	v142 = new("UICorner")
+																	v143 = new("ImageLabel")
+																	v144 = new("TextButton")
+																	v145 = new("UICorner")
+																	v146 = new("TextLabel")
+																	v147 = new("TextButton")
+																	v148 = new("UICorner")
+																	v149 = new("TextLabel")
+																	v150 = new("ImageLabel")
+																	v151 = new("UICorner")
+																	v152 = new("TextLabel")
+																	v153 = new("TextLabel")
+																	v154 = new("ImageLabel")
+																	v155 = new("Frame")
+																	v140.Name = "SQ SAMA"
+																	v140.Parent = gethui and gethui() or PlayerGui
+																	v140.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+																	v140.IgnoreGuiInset = true
+																	v141.Parent = v140
+
+																	local n13 = 30
+
+																	v141.BackgroundColor3 = Color3.fromRGB(n13, n13, n13)
+																end
+
+																v141.BackgroundTransparency = 0.45
+
+																local n14 = 0
+
+																v141.BorderColor3 = Color3.fromRGB(n14, n14, n14)
+															end
+
+															v141.BorderSizePixel = 0
+
+															local n15 = 0.5
+
+															v141.AnchorPoint = new2(n15, n15)
+														end
+
+														local n16 = 0.5
+														local n17 = 0
+
+														v141.Position = UDim2.new(n16, n17, n16, n17)
+													end
+
+													local n18 = 0
+
+													v141.Size = UDim2.new(0.353056401, n18, 0.399934381, n18)
+													v142.CornerRadius = UDim.new(0, 6)
+													v142.Parent = v141
+													v143.Name = "FrameShadow"
+													v143.Parent = v141
+
+													local n19 = 0.5
+
+													v143.AnchorPoint = new2(n19, n19)
+												end
+
+												v143.BackgroundTransparency = 1
+
+												local n20 = 0.5
+
+												v143.Position = UDim2.new(n20, 0, n20, 2)
+
+												local n21 = 1
+												local n22 = 142
+
+												v143.Size = UDim2.new(n21, n22, n21, n22)
+											end
+
+											v143.ZIndex = 0
+											v143.Image = "rbxassetid://12817494724"
+											v143.ImageTransparency = 0.5
+											v143.ScaleType = Enum.ScaleType.Slice
+
+											local n23 = 85
+											local n24 = 427
+
+											v143.SliceCenter = Rect.new(n23, n23, n24, n24)
+										end
+
+										v144.Parent = v141
+
+										local n25 = 97
+
+										v144.BackgroundColor3 = Color3.fromRGB(n25, n25, n25)
+										v144.BackgroundTransparency = 0.7
+										v144.BorderSizePixel = 0
+
+										local n26 = 0
+
+										v144.Position = UDim2.new(0.5, n26, 0.55, n26)
+									end
+
+									v144.AnchorPoint = new2(0.5, 0)
+
+									local n27 = 0
+
+									v144.Size = UDim2.new(0.531045794, n27, 0.123188406, n27)
+									v144.Font = Enum.Font.SourceSans
+									v144.Text = ""
+									v145.CornerRadius = UDim.new(0, 6)
+									v145.Parent = v144
+									v146.Parent = v144
+
+									local n28 = 0.5
+
+									v146.AnchorPoint = new2(n28, n28)
+
+									local n29 = 0.5
+									local n30 = 0
+
+									v146.Position = UDim2.new(n29, n30, n29, n30)
+								end
+
+								local n31 = 1
+								local n32 = 0
+
+								v146.Size = UDim2.new(n31, n32, n31, n32)
+								v146.Font = Enum.Font.SourceSansSemibold
+								v146.Text = "Normal Mode"
+								v146.TextColor3 = Color3.fromRGB(205, 214, 244)
+								v146.TextSize = 14
+								v146.BackgroundTransparency = 1
+								v147.Parent = v141
+
+								local n33 = 97
+
+								v147.BackgroundColor3 = Color3.fromRGB(n33, n33, n33)
+								v147.BackgroundTransparency = 0.7
+								v147.BorderSizePixel = 0
+
+								local n34 = 0
+
+								v147.Position = UDim2.new(0.5, n34, 0.7, n34)
+							end
+
+							v147.AnchorPoint = new2(0.5, 0)
+
+							local n35 = 0
+
+							v147.Size = UDim2.new(0.531, n35, 0.133869573, n35)
+							v147.Font = Enum.Font.SourceSans
+							v147.Text = ""
+							v148.CornerRadius = UDim.new(0, 6)
+							v148.Parent = v147
+							v149.Parent = v147
+
+							local n36 = 0.5
+
+							v149.AnchorPoint = new2(n36, n36)
+
+							local n37 = 0.5
+							local n38 = 0
+
+							v149.Position = UDim2.new(n37, n38, n37, n38)
+
+							local n39 = 1
+							local n40 = 0
+
+							v149.Size = UDim2.new(n39, n40, n39, n40)
+						end
+
+						v149.Font = Enum.Font.SourceSansSemibold
+						v149.Text = "God Mode"
+						v149.TextColor3 = Color3.fromRGB(205, 214, 244)
+						v149.TextSize = 14
+
+						local n41 = 1
+
+						v149.BackgroundTransparency = n41
+						v150.Parent = v141
+						v150.BackgroundTransparency = n41
+
+						local n42 = 0
+
+						v150.Position = UDim2.new(-0.00235841633, n42, n42, n42)
+
+						local n43 = 0
+
+						v150.Size = UDim2.new(1.00235844, n43, 1, n43)
+						v150.Image = "rbxassetid://74772367796358"
+
+						local n44 = 38
+
+						v150.ImageColor3 = Color3.fromRGB(n44, n44, n44)
+						v150.ImageTransparency = 0.62
+						v151.CornerRadius = UDim.new(0, 6)
+						v151.Parent = v150
+						v152.Parent = v141
+
+						local n45 = 0.5
+
+						v152.AnchorPoint = new2(n45, n45)
+
+						local n46 = 0
+
+						v152.Position = UDim2.new(0.5, n46, 0.36, n46)
+
+						local n47 = 0
+
+						v152.Size = UDim2.new(0.9, n47, n47, 37)
+					end
+
+					v152.Font = Enum.Font.SourceSansSemibold
+					v152.Text = "Synixia Hub"
+
+					local n48 = 60
+
+					v152.TextColor3 = Color3.fromRGB(255, n48, n48)
+					v152.TextScaled = true
+					v152.BackgroundTransparency = 1
+					v153.Parent = v141
+
+					local n49 = 0.5
+
+					v153.AnchorPoint = new2(n49, n49)
+
+					local n50 = 0
+
+					v153.Position = UDim2.new(0.5, n50, 0.48, n50)
+
+					local n51 = 0
+
+					v153.Size = UDim2.new(0.85, n51, n51, 22)
+					v153.Font = Enum.Font.SourceSansSemibold
+					v153.Text = "Select the mode you want to use."
+					v153.TextColor3 = Color3.fromRGB(205, 214, 244)
+					v153.TextSize = 14
+					v153.TextWrapped = true
+					v153.TextYAlignment = Enum.TextYAlignment.Top
+
+					local n52 = 1
+
+					v153.BackgroundTransparency = n52
+					v154.Parent = v141
+					v154.BackgroundTransparency = n52
+
+					local n53 = 0
+
+					v154.Position = UDim2.new(0.5, n53, 0.06, n53)
+					v154.AnchorPoint = new2(0.5, 0)
+
+					local n54 = 0
+
+					v154.Size = UDim2.new(0.148523644, n54, 0.25891304, n54)
+					v154.Image = "rbxassetid://102698274674617"
+					v155.Parent = v141
+
+					local n55 = 72
+
+					v155.BackgroundColor3 = Color3.fromRGB(n55, n55, n55)
+					v155.BorderSizePixel = 0
+
+					local n56 = 0
+
+					v155.Position = UDim2.new(0.5, n56, 0.685, n56)
+					v155.AnchorPoint = new2(0.5, 0)
+
+					local n57 = 0
+
+					v155.Size = UDim2.new(0.7, n57, n57, 1)
+					v147.MouseButton1Click:Connect(function()
+						-- upvalues: u76 (ref)
+						u76 = "GodMode"
+					end)
+					v144.MouseButton1Click:Connect(function()
+						-- upvalues: u76 (ref)
+						u76 = "Normal"
+					end)
+
+					local elapsed2 = os.clock()
+
+					repeat
+						wait2()
+					until u76 or os.clock() - elapsed2 > 10
+
+					if not u76 then
+						u76 = "Normal"
+					end
+
+					v140:Destroy()
+				end
+
+				InSplashScreen(function()
+					-- upvalues: u90 (ref), SplashScreen (ref), wait2 (ref), u137 (ref)
+					pcall(SplashScreen.in_loading_screen.set, false)
+					wait2(1.5)
+					pcall(u90.finish)
+					u137:Fire()
+				end)
+				u137.Event:Wait()
+				u137:Destroy()
+
+				if u76 == "GodMode" then
+					replicatesignal(LocalPlayer.Kill)
+					wait2(5)
+					u75.send("death_screen_request_respawn")
+				end
+			end
+
+			repeat
+				wait2()
+			until not LocalPlayer:GetAttribute("InSplashScreen") and PlayerGui:WaitForChild("Hotbar"):WaitForChild("HotbarHolder"):FindFirstChild("List").Visible
+		end
+
+		u202 = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+		Humanoid = u202:WaitForChild("Humanoid")
+		HumanoidRootPart = u202:WaitForChild("HumanoidRootPart")
+		Backpack = LocalPlayer:WaitForChild("Backpack")
+		u61.Connect(LocalPlayer.CharacterAdded, function(p52)
+			-- upvalues: HumanoidRootPart (ref), u202 (ref), Humanoid (ref)
+			u202 = p52
+			Humanoid = p52:WaitForChild("Humanoid")
+			HumanoidRootPart = p52:WaitForChild("HumanoidRootPart")
+		end)
+		u61.Connect(Humanoid.StateChanged, function(_, p54)
+			-- upvalues: Humanoid (ref)
+			if p54 == Enum.HumanoidStateType.FallingDown then
+				Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+			end
+		end)
+
+		local DrawObject = u61.DrawObject
+		local t15 = {
+			Visible = false
+		}
+		local n58 = 255
+
+		t15.Color = Color3.fromRGB(n58, n58, n58)
+		t15.Radius = 200
+		t15.Thickness = 1
+		t15.Filled = false
+		u209 = DrawObject("Circle", t15)
+		u210 = u61.DrawObject("Line", {
+			Visible = false,
+			Color = Color3.fromRGB(125, 21, 19),
+			Thickness = 1
+		})
+		Util.hook_players(function(p55)
+			-- upvalues: wait2 (ref), LocalPlayer (ref), u61 (ref)
+			if p55 ~= LocalPlayer then
+				local AllPlayerDrawing = u61.AllDrawing.AllPlayerDrawing
+				local t16 = {}
+				local DrawObject2 = u61.DrawObject
+				local t17 = {
+					Visible = false
+				}
+				local n59 = 0
+
+				t17.Color = Color3.fromRGB(255, n59, n59)
+				t17.Thickness = 0.7
+				t17.Transparency = 1
+				t17.Filled = false
+				t16.Box = DrawObject2("Square", t17)
+
+				local DrawObject3 = u61.DrawObject
+				local t18 = {
+					Visible = false
+				}
+				local n60 = 0
+
+				t18.Color = Color3.new(n60, 1, n60)
+				t18.Thickness = 2
+				t16.HpBar = DrawObject3("Line", t18)
+
+				local DrawObject4 = u61.DrawObject
+				local t19 = {
+					Visible = false
+				}
+				local n61 = 1
+
+				t19.Color = Color3.new(n61, n61, n61)
+				t19.Size = 15
+
+				local v490 = true
+
+				t19.Center = v490
+				t19.Outline = v490
+
+				local n62 = 0
+
+				t19.OutlineColor = Color3.new(n62, n62, n62)
+				t19.Text = p55.Name
+				t16.Name = DrawObject4("Text", t19)
+
+				local DrawObject5 = u61.DrawObject
+				local t20 = {
+					Visible = false
+				}
+				local n63 = 1
+
+				t20.Color = Color3.new(n63, n63, n63)
+				t20.Size = 15
+
+				local v495 = true
+
+				t20.Center = v495
+				t20.Outline = v495
+
+				local n64 = 0
+
+				t20.OutlineColor = Color3.new(n64, n64, n64)
+				t20.Text = ""
+				t16.Distance = DrawObject5("Text", t20)
+				AllPlayerDrawing[p55] = t16
+				wait2()
+			end
+		end)
+		u61.Connect(Players.PlayerRemoving, function(p56)
+			-- upvalues: wait2 (ref), u61 (ref)
+			if u61.AllDrawing.AllPlayerDrawing[p56] then
+				for _, v in next, u61.AllDrawing.AllPlayerDrawing[p56] do
+					if v.Remove then
+						v:Remove()
+						wait2()
+					end
+				end
+
+				u61.AllDrawing.AllPlayerDrawing[p56] = nil
+			end
+		end)
+
+		function u211(p57)
+			-- upvalues: new4 (ref), u61 (ref), new3 (ref), RunService (ref)
+			u61.SavedHistoryCFrame = p57.CFrame
+
+			local n65 = 1
+
+			p57.CFrame = new3(p57.Position + new4(n65, n65, n65))
+			RunService.RenderStepped:Wait()
+			p57.CFrame = u61.SavedHistoryCFrame
+		end
+		function u212(p58)
+			-- upvalues: RunService (ref), new4 (ref)
+			local p58Velocity = p58.Velocity
+			local AssemblyLinearVelocity = p58.AssemblyLinearVelocity
+			local AssemblyAngularVelocity = p58.AssemblyAngularVelocity
+			local RotVelocity = p58.RotVelocity
+			local v507 = math.random(-999999999, 999999999)
+			local v508 = math.random(-999999999, 999999999)
+			local v509 = math.random(-999999999, 999999999)
+
+			p58.Velocity = new4(v507, v508, v509)
+			p58.AssemblyLinearVelocity = new4(v507, v508, v509)
+			p58.AssemblyAngularVelocity = new4(v507, v508, v509)
+			p58.RotVelocity = new4(v507, v508, v509)
+			RunService.RenderStepped:Wait()
+			p58.Velocity = p58Velocity
+			p58.AssemblyLinearVelocity = AssemblyLinearVelocity
+			p58.AssemblyAngularVelocity = AssemblyAngularVelocity
+			p58.RotVelocity = RotVelocity
+		end
+
+		u61.Connect(RunService.Heartbeat, function()
+			-- upvalues: Char (ref), u1 (ref), u202 (ref), u212 (ref), u211 (ref)
+			if u1.AntiAimbot then
+				if not u202:WaitForChild("Head"):WaitForChild("Downed") or not u202:WaitForChild("Head"):WaitForChild("Downed").Enabled then
+					local v510 = Char.get_hrp()
+
+					u212(v510)
+					u211(v510)
+				end
+
+				return
+			end
+		end)
+		u61.Connect(RunService.Heartbeat, function()
+			-- upvalues: Char (ref), u1 (ref), u61 (ref)
+			if u1.AimAssist then
+				if u61.TargetAim then
+					for _, v in pairs(Char.get_all()) do
+						if v.Name == u61.TargetAim.Name and u61.IsAlive(v) then
+							local v513 = v:FindFirstChild(u1.SelectPart or "Head") or (v:FindFirstChild("Head") or v:FindFirstChildWhichIsA("BasePart"))
+
+							if v513 then
+								local timestamp = tick()
+								local Position = v513:GetPivot().Position
+								local v516 = u61
+								local TargetHistory = v516.TargetHistory
+								local v518 = v516.TargetHistory[v]
+
+								if not v518 then
+									v518 = {}
+								end
+
+								TargetHistory[v] = v518
+
+								local v519 = u61.TargetHistory[v]
+
+								if #v519 >= 3 then
+									table.remove(v519, 1)
+								end
+
+								table.insert(v519, {
+									pos = Position,
+									time = timestamp
+								})
+							end
+						end
+					end
+
+					return
+				end
+
+				return
+			end
+		end)
+		u61.Connect(u115.Event, function(p59)
+			-- upvalues: u116 (ref)
+			if p59 then
+				u116 = true
+			end
+		end)
+		u61.Connect(ReplicatedStorage.Remotes.Send.OnClientEvent, function(...)
+			-- upvalues: u115 (ref), u61 (ref)
+			local t21 = { ... }
+
+			if t21[1] == "notification" and u61.Anticheat_Detection_Types[t21[3]] then
+				u115:Fire(true)
+			end
+		end)
+
+		local TouchGui = PlayerGui:WaitForChild("TouchGui", 1)
+		local v214 = TouchGui and TouchGui:FindFirstChild("TouchControlFrame")
+		local v215 = v214 and v214:FindFirstChild("JumpButton")
+
+		u61.Connect(UserInputService.InputBegan, function(p60, p61)
+			-- upvalues: u61 (ref), u1 (ref)
+			if not p61 then
+				if u1.FlyJump then
+					if p60.UserInputType == Enum.UserInputType.Keyboard and p60.KeyCode == Enum.KeyCode.Space then
+						u61.JumpDown = true
+					end
+
+					return
+				end
+
+				return
+			end
+		end)
+		u61.Connect(UserInputService.InputEnded, function(p62, p63)
+			-- upvalues: u61 (ref)
+			if not p63 then
+				if p62.UserInputType == Enum.UserInputType.Keyboard and p62.KeyCode == Enum.KeyCode.Space then
+					u61.JumpDown = false
+				end
+
+				return
+			end
+		end)
+
+		if v215 then
+			u61.Connect(v215.InputBegan, function(p64, p65)
+				-- upvalues: u61 (ref), u1 (ref)
+				if not p65 then
+					if u1.FlyJump then
+						if p64.UserInputType == Enum.UserInputType.Touch then
+							u61.JumpDown = true
+						end
+
+						return
+					end
+
+					return
+				end
+			end)
+			u61.Connect(v215.InputEnded, function(p66, p67)
+				-- upvalues: u61 (ref)
+				if not p67 then
+					if p66.UserInputType == Enum.UserInputType.Touch then
+						u61.JumpDown = false
+					end
+
+					return
+				end
+			end)
+		end
+
+		elapsed = os.clock()
+		u61.Connect(RunService.PreRender, function()
+			-- upvalues: u1 (ref), HumanoidRootPart (ref), u61 (ref), Sprint (ref), u75 (ref), elapsed (ref), Humanoid (ref), u202 (ref)
+			if os.clock() - elapsed >= 0.1 then
+				elapsed = os.clock()
+
+				local v530 = Humanoid.MoveDirection.Magnitude > 0.1
+
+				if v530 and (u1.CustomSpeed or Sprint.sprinting.get()) then
+					u75.send("set_sprinting_1", true)
+				end
+
+				if v530 and u1.CustomSpeed then
+					local v531 = HumanoidRootPart
+
+					v531.CFrame = v531.CFrame + Humanoid.MoveDirection.Unit * ((u1.CustomSpeedValue or 1) / 145.5)
+				end
+
+				if u61.JumpDown and u1.FlyJump then
+					if not Humanoid or Humanoid.FloorMaterial ~= Enum.Material.Air then
+						return
+					end
+
+					for _, v in next, u202:GetDescendants() do
+						if v:IsA("BasePart") and v.AssemblyLinearVelocity.Y < 50 then
+							v:ApplyImpulse(Vector3.yAxis * 5.8333333333333)
+						end
+					end
+				end
+
+				return
+			end
+		end)
+
+		if workspace:FindFirstChild("Map"):FindFirstChild("VehicleBlockers") then
+			workspace:FindFirstChild("Map"):FindFirstChild("VehicleBlockers"):Destroy()
+		end
+
+		for k in next, DoorClient.class.objects do
+			if typeof(k) == "Instance" then
+				pcall(k.Destroy, k)
+			end
+		end
+
+		for _, v in next, ATM.class.objects do
+			local instance = v.instance
+
+			if instance and instance:IsDescendantOf(workspace) then
+				if not instance:FindFirstChild("BestPos") then
+					local v221
+
+					do
+						v221 = new("Part")
+						v221.Parent = instance
+
+						local n66 = 1
+
+						v221.Size = new4(n66, n66, n66)
+					end
+
+					v221.CanCollide = false
+					v221.Anchored = true
+					v221.Transparency = 1
+					v221.Name = "BestPos"
+
+					local v223 = u61.FindClosest(u61.BestPosOfATM, function(p68)
+						return typeof(p68) == "CFrame"
+					end, instance:GetPivot().Position)
+
+					if v223 then
+						v221.CFrame = v223
+					end
+				end
+
+				table.insert(u61.AllATM, instance)
+			end
+		end
+
+		for _, v in next, u61.BlockedNodePositions do
+			local v226 = new("Part", Map)
+
+			v226.Name = "BlockedNode"
+			v226.Anchored = true
+			v226.CanCollide = false
+			v226.Size = v.Size
+			v226.CFrame = new3(v.Position)
+			v226.Transparency = 1
+
+			local v227 = new("PathfindingModifier")
+
+			v227.Parent = v226
+			v227.PassThrough = false
+			v227.Label = "BlockedNode"
+		end
+
+		t22 = {}
+		t22.__index = t22
+
+		local _ = {
+			Normal = {
+				AgentCanJump = true,
+				AgentMaxSlope = 70,
+				WaypointSpacing = 3,
+				AgentJumpRadius = 50,
+				AgentJumpHeight = 10,
+				AgentRadius = ceil(2 * Humanoid:FindFirstChild("BodyWidthScale").Value),
+				AgentHeight = ceil(5 * Humanoid:FindFirstChild("BodyHeightScale").Value),
+				Costs = {
+					DoorArea = 0,
+					BlockedNode = math.huge
+				}
+			},
+			Vehicle = {}
+		}
+
+		function t5.GetInventory()
+			-- upvalues: Data (ref)
+			local t23 = {}
+
+			for k, v in pairs(Data.items or {}) do
+				for _, v8 in pairs(v) do
+					for _, v9 in ipairs(v8) do
+						table.insert(t23, {
+							Type = k,
+							Name = v9.name,
+							Guid = v9.guid,
+							Location = v9.location or "hand",
+							Amount = v9.amount or 1,
+							Durability = v9.durability,
+							Health = v9.health,
+							Class = v9.class and v9.class.name or nil,
+							Destroyed = v9.destroyed
+						})
+					end
+				end
+			end
+
+			return t23
+		end
+		function t5.GetItemsByName(p69)
+			-- upvalues: t5 (ref)
+			local t24 = {}
+
+			for _, v in ipairs(t5.GetInventory()) do
+				if p69 == v.Name then
+					table.insert(t24, v)
+				end
+			end
+
+			return t24
+		end
+		function t5.GetItemsByType(p70)
+			-- upvalues: Data (ref)
+			local t25 = {}
+
+			for k, v in pairs(Data.items or {}) do
+				if k == p70 then
+					for k2, v10 in pairs(v) do
+						t25[k2] = v10
+					end
+				end
+			end
+
+			return t25
+		end
+		function t5.FilterByLocation(p71, p72)
+			local t26 = {}
+
+			for _, v in ipairs(p71) do
+				if p72 == v.Location then
+					table.insert(t26, v)
+				end
+			end
+
+			return t26
+		end
+		function t5.FindItemByName(p73)
+			-- upvalues: u61 (ref), ReplicatedStorage (ref)
+			for _, v in next, ReplicatedStorage.Items:GetChildren() do
+				for _, v11 in next, v:GetChildren() do
+					if p73 == v11.Name or p73 == u61.GetAttributeSafe(v11, "DisplayName") then
+						return {
+							Name = v11.Name,
+							Description = u61.GetAttributeSafe(v11, "Description"),
+							Rarity = u61.GetAttributeSafe(v11, "RarityName"),
+							ImageId = u61.GetAttributeSafe(v11, "ImageId"),
+							Price = u61.GetAttributeSafe(v11, "RarityPrice")
+						}
+					end
+				end
+			end
+
+			return nil
+		end
+		function t5.FindItemByNamePattern(p74, p75)
+			-- upvalues: u61 (ref), ReplicatedStorage (ref)
+			for _, v in next, ReplicatedStorage.Items:GetChildren() do
+				if not p75 or p75 == v.Name then
+					for _, v12 in next, v:GetChildren() do
+						if v12.Name:lower():find(p74:lower()) then
+							return {
+								Name = v12.Name,
+								Description = u61.GetAttributeSafe(v12, "Description"),
+								Rarity = u61.GetAttributeSafe(v12, "RarityName"),
+								ImageId = u61.GetAttributeSafe(v12, "ImageId"),
+								Price = u61.GetAttributeSafe(v12, "RarityPrice")
+							}
+						end
+					end
+				end
+			end
+
+			return nil
+		end
+		function t5.GenerateHash(p76)
+			local t27 = {}
+
+			for _, v in next, p76:GetDescendants() do
+				if not v:IsA("MeshPart") then
+					if v:IsA("SpecialMesh") then
+						local MeshId = v.MeshId
+
+						if MeshId and MeshId ~= "" then
+							table.insert(t27, MeshId)
+						end
+
+						if v.TextureId and v.TextureId ~= "" then
+							table.insert(t27, v.TextureId)
+						end
+
+						if v.Parent and v.Parent:IsA("BasePart") then
+							table.insert(t27, v.Parent.Material.Name)
+						end
+					end
+				else
+					local MeshId = v.MeshId
+
+					if MeshId and MeshId ~= "" then
+						table.insert(t27, MeshId)
+					end
+
+					if v.TextureID and v.TextureID ~= "" then
+						table.insert(t27, v.TextureID)
+					end
+
+					table.insert(t27, v.Material.Name)
+				end
+			end
+
+			table:sort(function(p77, p78)
+				local num = tonumber(p77:match("%d+"))
+				local num2 = tonumber(p78:match("%d+"))
+
+				if not num or not num2 then
+					return p77 < p78
+				end
+
+				return num < num2
+			end)
+
+			local v574 = table.concat(t27, ",")
+			local n67 = 0
+			local n68 = 1
+
+			for i = n68, #v574, n68 do
+				n67 = (n67 * 31 + v574:byte(i)) % 4294967296
+			end
+
+			return n67
+		end
+		function t5.ResolveHash(p79)
+			-- upvalues: ReplicatedStorage (ref), t5 (ref), u61 (ref)
+			local v579 = t5.GenerateHash(p79)
+			local v580 = u61.ToolHashes[v579]
+			local t28 = {}
+			local v582 = true
+
+			t28.gun = v582
+			t28.melee = v582
+			t28.accessory = v582
+			t28.consumable = v582
+			t28.throwable = v582
+
+			if not v580 then
+				for _, v in next, ReplicatedStorage.Items:GetChildren() do
+					if t28[v.Name] then
+						for _, v13 in next, v:GetChildren() do
+							local v587 = t5.GenerateHash(v13)
+
+							u61.ToolHashes[v587] = v13
+
+							if v587 == v579 then
+								v580 = v13
+
+								break
+							end
+						end
+					end
+				end
+			end
+
+			if not v580 then
+				return t5.GuessItem(p79)
+			end
+
+			return {
+				Name = v580.Name,
+				Description = v580:GetAttribute("Description"),
+				Rarity = v580:GetAttribute("RarityName"),
+				ImageId = v580:GetAttribute("ImageId"),
+				Price = v580:GetAttribute("RarityPrice")
+			}
+		end
+		function t6.GetMoney()
+			-- upvalues: Data (ref)
+			local t29 = {}
+			local v589 = Data
+
+			t29.hand = v589.money.hand
+			t29.bank = v589.money.bank
+
+			return t29
+		end
+		function t6.GetSkill(p80)
+			-- upvalues: find (ref), PlayerGui (ref)
+			local SkillsScrollingFrame = PlayerGui:FindFirstChild("Skills"):FindFirstChild("SkillsHolder").SkillsScrollingFrame
+
+			for _, v in next, SkillsScrollingFrame:GetChildren() do
+				if v.Name == "SkillOptionTemplate" and find(v:FindFirstChild("SkillTitle").Text, p80) then
+					return tonumber(v:FindFirstChild("SkillTitle").Text:match("%d+"))
+				end
+			end
+		end
+		function t6.VerifyTool(p81)
+			-- upvalues: find (ref), u202 (ref), Backpack (ref)
+			local v595 = p81:lower()
+
+			for _, v in next, {
+				u202:GetChildren(),
+				Backpack:GetChildren()
+			} do
+				for _, v14 in next, v do
+					if find(v14.Name:lower(), v595, 1, true) then
+						return v14
+					end
+				end
+			end
+
+			return nil
+		end
+		function t7.Teleport(p82, p83, p84, p85)
+			-- upvalues: Humanoid (ref), PathfindingService (ref), u2 (ref), u75 (ref), min (ref), RunService (ref), u116 (ref), new3 (ref), new4 (ref), u1 (ref), u202 (ref), wait2 (ref), u61 (ref)
+			if p82 then
+				if not u1.StopTween then
+					if not u116 then
+						local v604 = nil
+
+						if Humanoid:GetAttribute("IsDead") then
+							repeat
+								wait2(1)
+							until Humanoid and Humanoid:GetAttribute("IsDead") == nil or u1.StopTween
+						end
+
+						local Position = u202:GetPivot().Position
+						local u606 = typeof(p82) == "CFrame" and p82.Position or p82
+						local u607 = PathfindingService:CreatePath(p84 == 1 and u2.Normal or u2.Vehicle)
+						local ok, _ = pcall(function()
+							-- upvalues: u606 (ref), u607 (ref), Position (ref)
+							u607:ComputeAsync(Position, u606)
+						end)
+
+						if ok then
+							local Waypoints = u607:GetWaypoints()
+							local v611 = false
+							local v612 = v611
+
+							for _, v in pairs(Waypoints) do
+								if v611 then
+									break
+								end
+
+								local v615 = v.Action == Enum.PathWaypointAction.Jump and 12 or 2.5
+								local n69 = 0
+								local v617 = v.Position + new4(n69, v615, n69)
+								local Position3 = u202:GetPivot().Position
+								local Unit = (v617 - Position3).Unit
+								local Magnitude = (v617 - Position3).Magnitude
+								local n70 = 0
+								local v622 = u1.TweenSpeed or 35
+
+								u61.StaminaFarm = true
+
+								while true do
+									local v623 = false
+
+									if Magnitude <= n70 then
+										v604 = true
+									end
+
+									if v604 then
+										break
+									end
+
+									local v624 = RunService.PreSimulation:Wait()
+
+									n70 = min(n70 + v622 * v624, Magnitude)
+
+									if not u1.StopTween and u61.IsAlive(u202) and not u116 then
+										if not p85 or not u61.GetATMStatus(p85) then
+											if Humanoid.Sit then
+												Humanoid.Sit = false
+											end
+
+											local v625 = Position3 + Unit * n70
+
+											u75.send("set_sprinting_1", true)
+											p83:PivotTo(new3(v625))
+											v623 = true
+										end
+
+										if not v623 then
+											v611 = true
+										end
+									else
+										v611 = true
+										v612 = v611
+									end
+
+									if not v623 then
+										break
+									end
+								end
+
+								v604 = false
+							end
+
+							if v611 then
+								if v612 and Humanoid.Sit then
+									Humanoid.Sit = false
+								end
+
+								wait2(2)
+							end
+
+							u116 = false
+							u61.StaminaFarm = false
+
+							return
+						end
+
+						return
+					end
+
+					if Humanoid.Sit then
+						Humanoid.Sit = false
+					end
+
+					wait2(2)
+					u116 = false
+
+					return
+				end
+
+				return
+			end
+		end
+		function t7.ForceStop()
+			-- upvalues: u61 (ref), u1 (ref), wait2 (ref)
+			u1.StopTween = true
+			wait2()
+
+			local v626 = false
+
+			u1.StopTween = v626
+			u61.StaminaFarm = v626
+		end
+		function t7.LockPosition(p86)
+			-- upvalues: RunService (ref), new3 (ref), u61 (ref), HumanoidRootPart (ref), delay (ref)
+			local u628 = typeof(p86) == "Vector3" and new3(p86) or p86
+			local u629 = u61.Connect(RunService.Heartbeat, function()
+				-- upvalues: u628 (ref), HumanoidRootPart (ref)
+				HumanoidRootPart.CFrame = u628
+			end)
+
+			delay(30, function()
+				-- upvalues: u629 (ref)
+				if u629 and u629.Connected then
+					u629:Disconnect()
+				end
+			end)
+
+			return u629
+		end
+		function t7.Deposit()
+			-- upvalues: t7 (ref), u75 (ref), t6 (ref), u202 (ref), wait2 (ref), u61 (ref), HumanoidRootPart (ref)
+			local v630 = u61
+			local v631 = v630.FindClosest(v630.AllATM, function(p87)
+				-- upvalues: u61 (ref)
+				return not u61.GetATMStatus(p87)
+			end, HumanoidRootPart.Position)
+
+			if not v631 then
+				return
+			end
+
+			local Position = v631.BestPos:GetPivot().Position
+
+			t7.Teleport(Position, u202, 1, v631)
+			wait2()
+			u75.get("transfer_funds", "hand", "bank", t6.GetMoney().hand)
+		end
+
+		u61.Connect(RunService.PostSimulation, function()
+			-- upvalues: new2 (ref), u210 (ref), Char (ref), UserId (ref), ATM (ref), Players (ref), t5 (ref), floor (ref), new (ref), UserInputService (ref), u209 (ref), u94 (ref), u61 (ref), Camera (ref), new4 (ref), u1 (ref), u202 (ref)
+			local MouseLocation = UserInputService:GetMouseLocation()
+			local v634 = u1.SelectPositionFov == "Cursor" and new2(MouseLocation.X, MouseLocation.Y)
+
+			if not v634 then
+				v634 = u1.SelectPositionFov == "Screen"
+
+				if v634 then
+					local v635 = new2
+					local v636 = Camera
+
+					v634 = v635(v636.ViewportSize.X / 2, v636.ViewportSize.Y / 2)
+				end
+			end
+
+			u209.Visible = u1.AimAssist or false
+			u209.Radius = u1.FOVRadius or 200
+
+			local v637 = u209
+			local v638 = u1.AimAssist and v634
+
+			if not v638 then
+				local n71 = 0
+
+				v638 = new2(n71, n71)
+			end
+
+			v637.Position = v638
+			u210.Visible = false
+
+			local v640 = nil
+			local huge = math.huge
+
+			for _, v in next, Char.get_all() do
+				if v ~= u202 and u61.IsAlive(v) then
+					local player = Players:GetPlayerFromCharacter(v)
+
+					if player and not player:GetAttribute("InMenuCharacterCreator") and not player:GetAttribute("InSplashScreen") and not player:GetAttribute("IsSafeZoneProtected") and not player:GetAttribute("IsSpawnProtected") then
+						local HumanoidRootPart2 = v:FindFirstChild("HumanoidRootPart")
+
+						if HumanoidRootPart2 then
+							local v646, v647 = u61.WorldToScreen(HumanoidRootPart2)
+
+							if v647 then
+								local v648 = u61.GetDistanceStart(new2(v646.X, v646.Y), v634)
+
+								if v648 <= u209.Radius and v648 < huge then
+									huge = v648
+									v640 = v
+								end
+							end
+						end
+					end
+				end
+			end
+
+			u61.TargetAim = v640
+
+			if v640 and Players:GetPlayerFromCharacter(v640) then
+				local v649, v650 = u61.WorldToScreen(v640:FindFirstChild(u1.SelectPart or "Head") or (v640:FindFirstChild("Head") or v640:FindFirstChildWhichIsA("BasePart")))
+
+				if v649 then
+					u210.Visible = u1.AimAssist and v650 or false
+
+					local v651 = u210
+
+					v651.From = v634
+					v651.To = new2(v649.X, v649.Y)
+				end
+			end
+
+			for k, v in next, u61.AllDrawing.AllPlayerDrawing do
+				local Character = k.Character
+
+				if not Character or not u61.IsAlive(Character) then
+					for _, v15 in next, v do
+						v15.Visible = false
+					end
+				else
+					local HumanoidRootPart3 = Character:FindFirstChild("HumanoidRootPart")
+					local Humanoid3 = Character:FindFirstChildOfClass("Humanoid")
+					local Head = Character:FindFirstChild("Head")
+
+					if HumanoidRootPart3 and Head then
+						local v660, v661 = u61.WorldToScreen(HumanoidRootPart3)
+
+						if not v661 then
+							for _, v16 in next, v do
+								v16.Visible = false
+							end
+						else
+							local n72 = 0
+							local v665 = u61.WorldToScreen(Head.Position + new4(n72, 0.5, n72))
+							local n73 = 0
+							local v667 = u61.WorldToScreen(HumanoidRootPart3.Position - new4(n73, 3, n73))
+							local v668 = Humanoid3.Health / Humanoid3.MaxHealth
+							local v669 = new2(1000 / v660.Z, v665.Y - v667.Y)
+							local n74 = 2
+							local v671 = new2(v660.X - v669.X / n74, v660.Y - v669.Y / n74)
+
+							v.Box.Visible = u1.Box or false
+							v.Box.Size = v669
+							v.Box.Position = v671
+							v.Box.Color = u1.IgnoreFriend and (k:IsFriendsWith(UserId) and Color3.fromRGB(4, 43, 150)) or (k:GetAttribute("IsSafeZoneProtected") and Color3.fromRGB(7, 255, 44) or (Character:GetAttribute("IsSpawnProtected") and Color3.fromRGB(3, 41, 255) or Color3.fromRGB(168, 72, 50)))
+							v.HpBar.From = new2(v671.X + v669.X + 3, v671.Y + v669.Y * (1 - v668))
+							v.HpBar.To = new2(v671.X + v669.X + 3, v671.Y + v669.Y)
+							v.HpBar.Color = Color3.new(1 - v668, v668, 0)
+							v.HpBar.Visible = u1.Hpbar or false
+							v.Name.Position = new2(v665.X, v665.Y - 20)
+							v.Name.Visible = u1.Name or false
+
+							if u1.Name then
+								v.Name.Text = k.Name
+
+								local n75 = 255
+
+								v.Name.Color = Color3.fromRGB(n75, n75, n75)
+							end
+
+							v.Distance.Position = new2(v665.X, v667.Y + 5)
+							v.Distance.Text = "(" .. floor(u61.GetDistanceRoot(Character)) .. ")"
+							v.Distance.Visible = u1.Distance or false
+						end
+					end
+				end
+			end
+
+			for k, v in next, u61.AllDrawing.AllDroppedItemDrawing do
+				if not k or not k.Parent then
+					if v.Box then
+						v.Box:Remove()
+					end
+
+					if v.Name then
+						v.Name:Remove()
+					end
+
+					if v.Amout then
+						v.Amout:Remove()
+					end
+
+					u61.AllDrawing.AllDroppedItemDrawing[k] = nil
+				end
+			end
+
+			local n76 = 255
+			local color3 = Color3.fromRGB(n76, n76, n76)
+
+			for _, v in next, u94.class.objects do
+				local instance = v.instance
+
+				if instance:IsA("Model") and instance:FindFirstChild("PickUpZone") and not instance:GetAttribute("Locked") then
+					local v680 = u61.AllDrawing.AllDroppedItemDrawing[instance]
+
+					if not v680 then
+						v680 = {
+							Box = u61.DrawObject("Square", {
+								Color = color3,
+								Thickness = 1,
+								Filled = false
+							})
+						}
+
+						local DrawObject6 = u61.DrawObject
+						local t30 = {
+							Color = color3
+						}
+						local v683 = true
+
+						t30.Outline = v683
+						t30.Center = v683
+						t30.Text = instance.Name
+						t30.Size = 13
+						v680.Name = DrawObject6("Text", t30)
+
+						local DrawObject7 = u61.DrawObject
+						local t31 = {
+							Color = color3
+						}
+						local v686 = true
+
+						t31.Outline = v686
+						t31.Center = v686
+						t31.Size = 11
+						v680.Amout = DrawObject7("Text", t31)
+						u61.AllDrawing.AllDroppedItemDrawing[instance] = v680
+					end
+
+					local v687, v688 = u61.WorldToScreen(instance.PickUpZone.Position)
+					local v689 = u61.GetItemRarity(instance) or "Common"
+
+					if not v688 then
+						for _, v17 in next, v680 do
+							v17.Visible = false
+						end
+					else
+						local v692 = u1.DroppedItemVisual and (not u1.BlacklistItemRarity or not table.find(u1.RarityVisualBlacklist or {}, v689)) or false
+						local n77 = 15
+
+						v680.Box.Size = new2(n77, n77)
+
+						local n78 = 7.5
+
+						v680.Box.Position = new2(v687.X - n78, v687.Y - n78)
+						v680.Box.Color = u61.RarityColors[v689]
+						v680.Box.Visible = v692
+						v680.Name.Position = new2(v687.X, v687.Y - 17.5)
+						v680.Name.Visible = v692
+						v680.Amout.Text = tostring(v.states.amount.get() or 1) .. "x"
+						v680.Amout.Position = new2(v687.X, v687.Y + 11.5)
+						v680.Amout.Visible = v692
+					end
+				end
+			end
+
+			for _, v in next, ATM.class.objects do
+				local instance = v.instance
+
+				if instance and instance:IsDescendantOf(workspace) then
+					local Highlight = instance:FindFirstChild("Highlight")
+
+					if not Highlight then
+						Highlight = Instance.new("Highlight")
+						Highlight.Name = "Highlight"
+						Highlight.FillTransparency = 0.8
+						Highlight.OutlineTransparency = 0
+						Highlight.Parent = instance
+					end
+
+					Highlight.OutlineColor = v.states.disabled.get() and Color3.fromRGB(99, 0, 2) or Color3.fromRGB(17, 99, 2)
+					Highlight.Enabled = u1.ATMViewer or false
+				end
+			end
+
+			for _, v in next, Char.get_all() do
+				if v ~= u202 and u61.IsAlive(v) then
+					local player = Players:GetPlayerFromCharacter(v)
+					local HumanoidRootPart4 = v:FindFirstChild("HumanoidRootPart")
+
+					if HumanoidRootPart4 then
+						if not HumanoidRootPart4:FindFirstChild("IvViewer") then
+							local BillboardGui = Instance.new("BillboardGui")
+
+							BillboardGui.Name = "IvViewer"
+							BillboardGui.AlwaysOnTop = true
+							BillboardGui.Adornee = HumanoidRootPart4
+							BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+							local n79 = 0
+
+							BillboardGui.Size = UDim2.new(n79, 200, n79, 30)
+
+							local n80 = 0
+
+							BillboardGui.StudsOffset = new4(n80, -3.5, n80)
+
+							local n81 = 0
+
+							BillboardGui.ExtentsOffset = new4(n81, -1, n81)
+							BillboardGui.Parent = HumanoidRootPart4
+
+							local Frame = Instance.new("Frame")
+
+							Frame.Name = "BackgroundFrame"
+							Frame.BackgroundTransparency = 1
+
+							local n82 = 1
+							local n83 = 0
+
+							Frame.Size = UDim2.new(n82, n83, n82, n83)
+
+							local n84 = 0.5
+
+							Frame.AnchorPoint = new2(n84, n84)
+
+							local n85 = 0.5
+							local n86 = 0
+
+							Frame.Position = UDim2.new(n85, n86, n85, n86)
+							Frame.Parent = BillboardGui
+
+							local UIListLayout = Instance.new("UIListLayout")
+							local _Enum = Enum
+
+							UIListLayout.FillDirection = _Enum.FillDirection.Horizontal
+							UIListLayout.HorizontalAlignment = _Enum.HorizontalAlignment.Center
+							UIListLayout.VerticalAlignment = _Enum.VerticalAlignment.Center
+							UIListLayout.Padding = UDim.new(0, 5)
+							UIListLayout.Parent = Frame
+						end
+
+						local IvViewer = HumanoidRootPart4:FindFirstChild("IvViewer")
+						local v716 = IvViewer and IvViewer:FindFirstChild("BackgroundFrame")
+
+						if v716 then
+							local t32 = {}
+
+							for _, v18 in pairs({
+								player.Backpack,
+								v
+							}) do
+								if v18 then
+									for _, child in pairs(v18:GetChildren()) do
+										if child:IsA("Tool") and not child:GetAttribute("JobTool") and not child:GetAttribute("Locked") then
+											local v722 = t5.ResolveHash(child)
+
+											if v722 and v722.ImageId then
+												t32[v722.Name] = true
+
+												if not v716:FindFirstChild(v722.Name) then
+													local v723 = new("ImageLabel")
+
+													v723.Name = v722.Name
+													v723.Image = "rbxassetid://137066731814190"
+													v723.BackgroundTransparency = 1
+													v723.BorderSizePixel = 0
+													v723.ImageColor3 = u61.RarityColors[v722.Rarity] or Color3.fromRGB(0, 150, 255)
+
+													local n87 = 0
+													local n88 = 25
+
+													v723.Size = UDim2.new(n87, n88, n87, n88)
+													v723.Parent = v716
+
+													local v726 = new("ImageLabel")
+
+													v726.Name = "IconBase"
+													v726.Image = v722.ImageId
+													v726.BackgroundTransparency = 1
+													v726.BorderSizePixel = 0
+
+													local n89 = 0.9
+													local n90 = 0
+
+													v726.Size = UDim2.new(n89, n90, n89, n90)
+
+													local n91 = 0.5
+
+													v726.AnchorPoint = Vector2.new(n91, n91)
+
+													local n92 = 0.5
+													local n93 = 0
+
+													v726.Position = UDim2.new(n92, n93, n92, n93)
+													v726.Parent = v723
+												end
+											end
+										end
+									end
+								end
+							end
+
+							IvViewer.Enabled = u1.InventoryViewer or false
+
+							for _, child in pairs(v716:GetChildren()) do
+								if child:IsA("ImageLabel") and not t32[child.Name] then
+									child:Destroy()
+								end
+							end
+						end
+					end
+				end
+			end
+		end)
+		spawn(function()
+			-- upvalues: LocalPlayer (ref), Data (ref), u1 (ref), u61 (ref), SkillsList (ref), wait2 (ref)
+			while wait2(0.25) do
+				pcall(function()
+					-- upvalues: u1 (ref), LocalPlayer (ref), u61 (ref), SkillsList (ref), Data (ref)
+					local v1149 = LocalPlayer:GetAttribute("SprintBar") or 0
+					local v1150 = u61
+
+					v1150.MovementSpoof = v1150.StaminaFarm and v1149 > 0.01
+
+					if u1.HackToolChip ~= "Smart Select" then
+						u61.HackChip = u1.HackToolChip or "HackToolBasic"
+					else
+						for _, v in ipairs(u61.HackToolList) do
+							if SkillsList.has_skill(Data, "atm_hacker", v.Skill) then
+								u61.HackChip = v.Tool
+							end
+						end
+					end
+				end)
+			end
+		end)
+		spawn(function()
+			-- upvalues: wait2 (ref), RunService (ref), u61 (ref), Humanoid (ref)
+			local n94 = 1
+
+			while RunService.PreSimulation:Wait() do
+				if u61.MovementSpoof then
+					n94 *= -1
+					wait2()
+					sethiddenproperty(Humanoid, "MoveDirectionInternal", Vector3.zAxis / 2 * n94)
+				end
+			end
+		end)
+		spawn(function()
+			-- upvalues: LocalPlayer (ref), Players (ref), u1 (ref), u75 (ref), u61 (ref), HumanoidRootPart (ref), u202 (ref), Backpack (ref), Char (ref), RunService (ref)
+			while RunService.Heartbeat:Wait() do
+				pcall(function()
+					-- upvalues: u202 (ref), LocalPlayer (ref), u75 (ref), u61 (ref), Players (ref), u1 (ref), Char (ref), Backpack (ref), HumanoidRootPart (ref)
+					if u1.AutoJob or u1.AutoATM then
+						for _, v in next, Char.get_all() do
+							if v ~= u202 and v:FindFirstChild("HumanoidRootPart") and u61.GetDistanceRoot(v) <= 10 then
+								local t33 = {}
+								local player = Players:GetPlayerFromCharacter(v)
+
+								table.insert(t33, player)
+
+								if #t33 > 0 then
+									if u202:FindFirstChild("Fists") then
+										local Fists = u202:FindFirstChild("Fists")
+
+										Fists:Activate()
+
+										local v1158 = LocalPlayer:GetAttribute("SpeedMultiplier") or 1
+
+										u75.send("melee_attack", Fists, t33, HumanoidRootPart.CFrame, 25.879345730429208 * v1158)
+									else
+										Backpack:FindFirstChild("Fists").Parent = u202
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+		t22.AutoRejoin = u61.AddThread(function()
+			-- upvalues: TeleportService (ref), LocalPlayer (ref), wait2 (ref), PlaceId (ref), JobId (ref), u1 (ref)
+			if u1.AutoRejoin then
+				local v735 = u1.RejoinTime or 3
+				local n95 = 60
+
+				if v735 < v735 * n95 * n95 then
+					wait2(1)
+
+					return
+				end
+
+				TeleportService:TeleportToPlaceInstance(PlaceId, JobId, LocalPlayer)
+
+				return
+			end
+		end)
+		t22.AutoJob = u61.AddThread(function()
+			-- upvalues: LocalPlayer (ref), new3 (ref), u61 (ref), u202 (ref), StockTimes (ref), new4 (ref), ProgressBar (ref), delay (ref), u104 (ref), u1 (ref), Char (ref), SkillsList (ref), HumanoidRootPart (ref), u75 (ref), t7 (ref), t6 (ref), Tiles (ref), SteakhouseCook (ref), wait2 (ref), PlayerGui (ref), Humanoid (ref), Backpack (ref), JobData (ref), Data (ref)
+			if u1.AutoJob then
+				local s9
+
+				if t6.GetMoney().hand <= (tonumber(u1.MoneyDespoit) or 250) then
+					if u1.SelectJob ~= "Steak" then
+						if u1.SelectJob ~= "Shelf Stock" then
+							if u1.SelectJob ~= "Janitor" then
+								local _ = u1.SelectJob
+
+								s9 = "Plant"
+							elseif LocalPlayer:GetAttribute("Job") == "janitor" then
+								local v739 = t6.VerifyTool("Mop")
+
+								if not v739 then
+									u75.send("leave_job")
+
+									return
+								end
+
+								if not Char.get_tool() then
+									Humanoid:EquipTool(v739)
+								end
+
+								s9 = t6.GetSkill("Janitor")
+
+								local v740 = u61.FindClosest(Tiles:WaitForChild("BurgerPlaceTile").BurgerPlace.Interior:FindFirstChild("Puddles"):GetChildren(), function(p88)
+									-- upvalues: s9 (ref)
+									return p88:IsA("BasePart") and (p88.Size.Magnitude > 0.001 and (p88.Transparency < 1 and (p88.Name == "LargePuddle" and s9 >= 5 or (p88.Name == "OilPuddle" and s9 >= 35 or (p88.Name == "ToxicPuddle" and s9 >= 50 or p88.Name == "NastyPuddle" and s9 >= 20)))))
+								end, HumanoidRootPart.Position)
+
+								if v740 then
+									local n96 = 15
+									local v742 = new4(n96, 10, n96)
+
+									if v742 ~= v740.Size then
+										v740.Size = v742
+									end
+
+									t7.Teleport(v740.Position, u202, 1)
+								end
+							else
+								local v743 = u61
+
+								if v743.GetDistanceRoot(v743.JobPositions.JanitorApply) <= 5 then
+									local send = u75.send
+
+									s9 = "apply_for_job"
+
+									local _workspace = workspace
+
+									send(s9, _workspace:WaitForChild("BurgePlaceBeacon"))
+								else
+									local Teleport = t7.Teleport
+
+									s9 = u61.JobPositions.JanitorApply
+
+									local v747 = u202
+
+									Teleport(s9, v747, 1)
+								end
+							end
+						else
+							local Interior = Tiles:WaitForChild("GasStationTile"):WaitForChild("Quick11"):WaitForChild("Interior")
+
+							s9 = Interior:WaitForChild("Quick11Beacon")
+
+							local ShelfStockApply = u61.JobPositions.ShelfStockApply
+
+							if LocalPlayer:GetAttribute("Job") == "shelf_stocker" then
+								local v750 = t6.VerifyTool("BoxTool")
+
+								if v750 then
+									local v751 = Char.get_tool()
+									local Shelves = Interior:WaitForChild("ShelfStockingJob"):WaitForChild("Shelves")
+									local v753 = u61.FindClosest(Shelves:GetChildren(), function(p89)
+										return p89:IsA("BasePart") and p89.Name == "Shelf"
+									end, s9:GetPivot().Position)
+
+									if v751 then
+										v751.Parent = Backpack
+									end
+
+									t7.Teleport(v753:GetPivot().Position, u202, 1)
+
+									local n97 = 0
+
+									for _, v in pairs(v750:GetAttributes()) do
+										if typeof(v) == "string" and v:match("Box") then
+											n97 += 1
+										end
+									end
+
+									local n98 = 1
+
+									for _, v in next, SkillsList.list.shelf_stocker do
+										if SkillsList.has_skill(Data, "shelf_stocker", v.name) and v.reward_info and v.reward_info.speed_percentage_increase then
+											n98 += v.reward_info.speed_percentage_increase / 100
+										end
+									end
+
+									local v760 = JobData.job_info.shelf_stocker.stock_shelf_length / n98 + 0.05
+									local n99 = 1
+
+									for _ = n99, n97, n99 do
+										if not v750 or not t6.VerifyTool("BoxTool") then
+											break
+										end
+
+										u75.send("player_started_stocking_shelf", v753)
+										wait2(v760 + 0.05)
+										u75.send("player_stocked_shelf", v753)
+									end
+
+									delay(0.1, function()
+										for _, v in next, workspace:GetChildren() do
+											if v.Name == "Beacon" then
+												v:Destroy()
+											end
+										end
+									end)
+								else
+									local v763 = nil
+
+									for k, v in next, u104.box_pickup_class.objects do
+										if k.Name ~= "NormalBox" then
+											local v766 = require(k:WaitForChild("AccessCheck")).can_access(Data)
+											local v767 = v.states.stock_key.get()
+											local v768 = v.states.stock_refresh_seconds.get()
+											local v769 = v.states.stock_max_stock.get()
+
+											if v767 ~= "" and v768 ~= -1 and v769 ~= -1 and v769 > StockTimes.get_consumed_amount(v767, v768) and v766 then
+												v763 = k
+
+												break
+											end
+
+											v763 = k
+
+											continue
+										end
+
+										v763 = k
+									end
+
+									local ProximityPrompt = v763:WaitForChild("ProximityPrompt")
+									local v771 = Char.get()
+
+									if v763.Name == "NormalBox" then
+										if u61.GetDistanceRoot(ShelfStockApply) > 3 then
+											t7.Teleport(ShelfStockApply, u202, 1)
+										end
+									else
+										t7.Teleport(u61.JobPositions.ShelfStock2, u202, 1)
+										u61.WaitForPing()
+
+										local n100 = 0
+
+										v771:PivotTo(v771:GetPivot() * new3(n100, -15, n100))
+										u61.WaitForPing()
+										t7.Teleport(v763.Position, u202, 1)
+										u61.WaitForPing()
+									end
+
+									local v773 = Char.get_tool()
+
+									if v773 then
+										v773.Parent = Backpack
+									end
+
+									local n101 = 1
+
+									for _ = n101, 5, n101 do
+										fireproximityprompt(ProximityPrompt)
+										wait2()
+									end
+
+									if v763.Name ~= "NormalBox" then
+										u61.WaitForPing()
+
+										local n102 = 0
+
+										v771:PivotTo(v771:GetPivot() * new3(n102, 25, n102))
+									end
+								end
+							elseif u61.GetDistanceRoot(ShelfStockApply) <= 5 then
+								u75.send("apply_for_job", s9)
+							else
+								t7.Teleport(ShelfStockApply, u202, 1)
+							end
+						end
+					elseif LocalPlayer:GetAttribute("Job") == "steakhouse_cook" then
+						local v777 = Char.get_tool()
+
+						if v777 and v777:GetAttribute("IsCookable") == true then
+							s9 = u75.get("get_random_free_grill")
+
+							if s9 then
+								local v778 = SteakhouseCook.grill_class.get(s9)
+								local v779 = v778 and v778.instance
+
+								if v778 and v779 then
+									local Pivot = v779.GrillArea:GetPivot()
+
+									repeat
+										if u61.GetDistanceRoot(Pivot) <= 5 then
+											local elapsed3 = os.clock()
+
+											u75.send("start_grilling_2", v779)
+
+											repeat
+												wait2(0.015)
+											until ProgressBar.bar_enabled.get() or os.clock() - elapsed3 > 1.5
+
+											if ProgressBar.bar_enabled.get() then
+												repeat
+													wait2(0.05)
+												until ProgressBar.get_status_from_ui() == "Perfect" or not ProgressBar.bar_enabled.get() or not u1.AutoJob
+
+												firesignal(PlayerGui.ProgressBar.ProgressBarFrame.InputFrame.FinishBar.MouseButton1Click)
+											end
+
+											return
+										end
+
+										t7.Teleport(Pivot, u202, 1)
+										wait2(0.1)
+									until not ProgressBar.bar_enabled.get() and (not u202:FindFirstChildWhichIsA("Tool") or u202:FindFirstChildWhichIsA("Tool"):GetAttribute("IsCookable") ~= true) or not u1.AutoJob
+								end
+							end
+						else
+							local v782 = u61
+
+							if v782.GetDistanceRoot(v782.JobPositions.Steak3) <= 5 then
+								s9 = Tiles.ShoppingTile.SteakHouse.Interior.Fridge
+
+								for _, child in pairs(s9:GetChildren()) do
+									if child.Name == "Base" and child:FindFirstChildOfClass("Attachment") then
+										fireproximityprompt(child:FindFirstChildOfClass("Attachment"):FindFirstChildOfClass("ProximityPrompt"))
+									end
+								end
+							else
+								s9 = t7.Teleport
+								s9(u61.JobPositions.Steak3, u202, 1)
+							end
+						end
+					else
+						local v785 = u61
+						local v786 = v785.GetDistanceRoot(v785.JobPositions.Steak2)
+
+						if v786 >= 2 then
+							if v786 >= 5 then
+								s9 = t7.Teleport
+								s9(u61.JobPositions.Steak1, u202, 1)
+							else
+								s9 = u202
+								s9:PivotTo(new3(u61.JobPositions.Steak2))
+							end
+						else
+							s9 = u75.send
+							s9("apply_for_job", Tiles:WaitForChild("ShoppingTile"):WaitForChild("SteakHouse"):WaitForChild("Interior"):WaitForChild("SteakHouseBeacon"))
+						end
+					end
+				else
+					s9 = t7
+					s9.Deposit()
+				end
+
+				return
+			end
+
+			t7.ForceStop()
+		end, 0.15)
+		t22.AutoPickDroppedItem = u61.AddThread(function()
+			-- upvalues: u61 (ref), u1 (ref), u94 (ref), u96 (ref), u75 (ref)
+			if u1.AutoPickDroppedItem then
+				for k, _ in pairs(u94.class.objects) do
+					if u61.GetDistanceRoot(k) >= 30 then
+						return
+					end
+
+					if k.Name ~= "Money" and u1.BlacklistPickDroppedItem then
+						local RarityName = u96.get_item_instance(k.Name):GetAttribute("RarityName")
+
+						if table.find(u1.RarityPickBlacklist or {}, RarityName) then
+							return
+						end
+					end
+
+					u75.get("pickup_dropped_item", k)
+				end
+
+				return
+			end
+		end)
+
+		function u230(p90, p91, p92)
+			-- upvalues: new4 (ref), Humanoid (ref), u202 (ref)
+			pcall(function()
+				-- upvalues: Humanoid (ref)
+				Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+			end)
+
+			local v793 = p91 * -1
+
+			for _, v in next, u202:GetChildren() do
+				if v:IsA("BasePart") then
+					local n103 = -1000
+
+					v.AssemblyLinearVelocity = Vector3.yAxis * -1000 * v793 + Vector3.zAxis * n103 * v793
+					v.RotVelocity = Vector3.yAxis * n103 * v793 + Vector3.zAxis * -1000 * v793
+					v.AssemblyAngularVelocity = Vector3.zero
+
+					local v797 = false
+
+					v.CanCollide = v797
+					v.Anchored = v797
+				end
+			end
+
+			u202:PivotTo(p92 - Vector3.yAxis * (p90 and 16 or 18) + Vector3.xAxis * (math.sin(os.clock() * 4.5 * 100) * 7.5) + Vector3.zAxis * (-math.sin(os.clock() * 4.5 * 100) * 7.5))
+
+			for _, v in next, u202:GetChildren() do
+				if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+					local n104 = 64
+
+					v.CFrame = p92 + new4(n104, 1000, n104)
+				end
+			end
+		end
+
+		t22.AntiKill = u61.AddThread(function()
+			-- upvalues: u202 (ref), Humanoid (ref), u230 (ref), new3 (ref), u61 (ref), RunService (ref), u1 (ref)
+			repeat
+				local v802
+
+				repeat
+					if not RunService.PostSimulation:Wait() then
+						return
+					end
+
+					if not u1.AntiKill then
+						return
+					end
+
+					local Head = u202:FindFirstChild("Head")
+
+					if not Head then
+						return
+					end
+
+					v802 = Head:FindFirstChild("Downed") or Head:WaitForChild("Downed", 3)
+
+					if not v802 then
+						return
+					end
+				until v802 and v802.Enabled
+
+				u1.Downed = true
+
+				local Pivot = u202:GetPivot()
+
+				if Pivot.Position.Y <= 266 then
+					Pivot = new3(Pivot.Position.X, 255, Pivot.Position.Z)
+				end
+
+				local elapsed4 = os.clock()
+				local elapsed5 = nil
+				local _os = os
+				local v807 = _os.clock()
+
+				if _os.clock() - elapsed4 > 25 then
+					u61.Panic = false
+
+					return
+				end
+
+				local v808 = os.clock() - v807
+				local v809 = v808 >= 0.3
+
+				if v808 >= 1.8 then
+					os.clock()
+				end
+
+				if Humanoid.Health < 29 then
+					u230(v809, 1, Pivot)
+				else
+					if not elapsed5 then
+						elapsed5 = os.clock()
+					end
+
+					if os.clock() - elapsed5 <= 0.7 then
+						u230(v809, 1, Pivot)
+					else
+						for _, v in next, u202:GetChildren() do
+							if v:IsA("BasePart") then
+								v.CFrame = Pivot
+
+								local _Vector3 = Vector3
+
+								v.AssemblyLinearVelocity = _Vector3.zero
+								v.AssemblyAngularVelocity = _Vector3.zero
+							end
+						end
+
+						u202:PivotTo(Pivot)
+					end
+				end
+			until not v802.Enabled
+
+			u1.Downed = false
+		end, 0.1)
+		t22.AutoLock = u61.AddThread(function()
+			-- upvalues: Humanoid (ref), u109 (ref), u1 (ref), UserId (ref), u75 (ref)
+			local v813 = u109.get_car_player_is_in()
+
+			if u1.AutoLock and v813 and Humanoid.Sit then
+				if v813:GetAttribute("OwnerUserId") == UserId then
+					local v814 = u109.class.objects[v813]
+
+					if v814 then
+						if not v814.states.locked.get() then
+							u75.send("lock_vehicle", v813, true)
+						end
+
+						return
+					end
+
+					return
+				end
+
+				return
+			end
+		end, 0.75)
+		t22.BumpAura = u61.AddThread(function()
+			-- upvalues: Humanoid (ref), u61 (ref), u75 (ref), Char (ref), u202 (ref), u1 (ref), u109 (ref), new4 (ref)
+			if u1.BumpAura and u109.get_car_player_is_in() and Humanoid.Sit then
+				for _, v in next, Char.get_all() do
+					if v ~= u202 and u61.IsAlive(v) and u61.GetDistanceRoot(v) < 100 then
+						local n105 = 80
+
+						u75.send("run_over", u109.get_car_player_is_in(), v, new4(n105, n105, n105))
+					end
+				end
+
+				return
+			end
+		end, 0.1)
+		t22.Snap = u61.AddThread(function()
+			-- upvalues: u202 (ref), u51 (ref), u61 (ref), n1 (ref), HumanoidRootPart (ref), u1 (ref)
+			if u1.Snap and u61.IsAlive(u202) then
+				local v818 = u1.YOffsetSnap or 1
+
+				if v818 ~= n1 then
+					n1 = v818
+				end
+
+				local PositionY = HumanoidRootPart.Position.Y
+				local v820 = u51.Y - v818 - PositionY
+				local n106 = 0
+
+				u202:PivotTo(HumanoidRootPart.CFrame * CFrame.new(n106, v820, n106))
+
+				return
+			end
+		end)
+		t22.VehicleNoclip = u61.AddThread(function()
+			-- upvalues: u202 (ref), u1 (ref), u61 (ref), new4 (ref)
+			if u1.VehicleNoclip and u61.IsAlive(u202) then
+				local v822 = u61.FindVehicle()
+
+				if v822 then
+					local VehicleNoclipParts = u1.VehicleNoclipParts
+
+					if not VehicleNoclipParts then
+						VehicleNoclipParts = {}
+
+						for _, descendant in pairs(v822:GetDescendants()) do
+							if descendant:IsA("BasePart") then
+								VehicleNoclipParts[descendant] = descendant.CanCollide
+							end
+						end
+
+						u1.VehicleNoclipParts = VehicleNoclipParts
+					end
+
+					for k in pairs(VehicleNoclipParts) do
+						if k.Parent then
+							k.CanCollide = false
+						end
+					end
+
+					local PrimaryPart = v822.PrimaryPart
+
+					if PrimaryPart then
+						local v828, v829 = v822:GetBoundingBox()
+						local raycastParams = RaycastParams.new()
+
+						raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+						raycastParams.FilterDescendantsInstances = {
+							v822,
+							u202
+						}
+
+						local n107 = 0
+						local n108 = 0
+						local raycastResult = workspace:Raycast(v828.Position + Vector3.new(n107, 20, n107), Vector3.new(n108, -60, n108), raycastParams)
+
+						if raycastResult then
+							local v834 = raycastResult.Position.Y + v829.Y / 2 + 0.2 - v828.Position.Y
+
+							if v834 > 0 then
+								local n109 = 0
+
+								v822:PivotTo(v822:GetPivot() + Vector3.new(n109, v834, n109))
+
+								local AssemblyLinearVelocity = PrimaryPart.AssemblyLinearVelocity
+
+								PrimaryPart.AssemblyLinearVelocity = new4(AssemblyLinearVelocity.X, math.max(AssemblyLinearVelocity.Y, 0), AssemblyLinearVelocity.Z)
+							end
+						end
+					end
+
+					return
+				end
+			end
+
+			local VehicleNoclipParts = u1.VehicleNoclipParts
+
+			if VehicleNoclipParts then
+				for k, v in pairs(VehicleNoclipParts) do
+					if k.Parent then
+						k.CanCollide = v
+					end
+				end
+
+				u1.VehicleNoclipParts = nil
+			end
+		end)
+		t22.CustomSpeed = u61.AddThread(function()
+			-- upvalues: Humanoid (ref), u1 (ref)
+			if u1.CustomSpeed then
+				if Humanoid:GetAttribute("TargetWalkSpeed") ~= 30 and Humanoid.WalkSpeed ~= 30 then
+					local v840 = Humanoid
+					local n110 = 30
+
+					v840.WalkSpeed = n110
+					v840:SetAttribute("TargetWalkSpeed", n110)
+				end
+
+				return
+			end
+		end, 0.25)
+		t22.CustomJumpPower = u61.AddThread(function()
+			-- upvalues: Humanoid (ref), u1 (ref)
+			if u1.CustomJumpPower then
+				local v842 = u1.CustomJumpPowerValue or 7.2
+
+				if v842 ~= Humanoid.JumpHeight then
+					Humanoid.JumpHeight = v842
+				end
+
+				return
+			end
+		end, 0.25)
+
+		function u231(p93)
+			-- upvalues: u61 (ref)
+			if not p93 then
+				return nil
+			end
+
+			local t34 = {
+				"Ammo",
+				"CurrentAmmo",
+				"AmmoCount",
+				"MagAmmo",
+				"LoadedAmmo",
+				"ClipAmmo",
+				"Bullets"
+			}
+
+			for _, v in ipairs(t34) do
+				local v19 = p93:GetAttribute(v)
+
+				if type(v19) == "number" then
+					return v19
+				end
+
+				local v848 = u61.GetAttributeSafe(p93, v)
+
+				if type(v848) == "number" then
+					return v848
+				end
+			end
+
+			for _, v in ipairs(t34) do
+				local v20 = p93:FindFirstChild(v)
+
+				if v20 and v20:IsA("ValueBase") and type(v20.Value) == "number" then
+					return v20.Value
+				end
+			end
+
+			return nil
+		end
+		function u232(p94)
+			-- upvalues: u61 (ref)
+			if not p94 then
+				return false
+			end
+
+			for _, v in ipairs({
+				"Reloading",
+				"IsReloading",
+				"Reload",
+				"IsReload"
+			}) do
+				if p94:GetAttribute(v) == true then
+					return true
+				end
+
+				if u61.GetAttributeSafe(p94, v) == true then
+					return true
+				end
+			end
+
+			return false
+		end
+		function u233()
+			-- upvalues: Camera (ref), Char (ref), u61 (ref), u1 (ref), new2 (ref), u202 (ref), HumanoidRootPart (ref), UserId (ref), Players (ref)
+			if not u202 or not HumanoidRootPart or not Camera then
+				return nil
+			end
+
+			local v855 = u1.AutoShotRadius or 150
+			local v856 = new2
+			local v857 = Camera
+			local v858 = v856(v857.ViewportSize.X / 2, v857.ViewportSize.Y / 2)
+			local v859 = nil
+
+			for _, v in next, Char.get_all() do
+				if v ~= u202 and u61.IsAlive(v) then
+					local player = Players:GetPlayerFromCharacter(v)
+
+					if player and not player:GetAttribute("InMenuCharacterCreator") and not player:GetAttribute("InSplashScreen") and not player:GetAttribute("IsSafeZoneProtected") and not player:GetAttribute("IsSpawnProtected") and not (u1.IgnoreFriend and player:IsFriendsWith(UserId)) then
+						local HumanoidRootPart5 = v:FindFirstChild("HumanoidRootPart")
+
+						if HumanoidRootPart5 then
+							local v864, v865 = u61.WorldToScreen(HumanoidRootPart5)
+
+							if v865 then
+								local v866 = u61.GetDistanceStart(new2(v864.X, v864.Y), v858)
+
+								if v866 <= v855 then
+									v859 = v
+									v855 = v866
+								end
+							end
+						end
+					end
+				end
+			end
+
+			return v859
+		end
+		function u234()
+			-- upvalues: Char (ref), u61 (ref), u202 (ref), u232 (ref), Humanoid (ref), wait2 (ref), HumanoidRootPart (ref), u231 (ref), u233 (ref), u1 (ref)
+			while u1.AutoShot do
+				local v867 = u1.AutoShotInterval or 0.15
+
+				pcall(function()
+					-- upvalues: HumanoidRootPart (ref), Char (ref), u232 (ref), Humanoid (ref), u61 (ref), u1 (ref), u202 (ref), u233 (ref), u231 (ref)
+					if not u1.AutoShot then
+						return
+					end
+
+					if not u202 or not HumanoidRootPart or not Humanoid then
+						return
+					end
+
+					if not u61.IsAlive(u202) then
+						return
+					end
+
+					local u1163 = Char.get_tool()
+
+					if not u1163 then
+						return
+					end
+
+					if not u1163:HasTag("Gun") then
+						return
+					end
+
+					if u232(u1163) then
+						return
+					end
+
+					local v1164 = u231(u1163)
+
+					if v1164 ~= nil and v1164 <= 0 then
+						pcall(function()
+							-- upvalues: u1163 (ref)
+							u1163:Activate()
+						end)
+
+						return
+					end
+
+					local v1165 = u233()
+
+					if not v1165 then
+						return
+					end
+
+					local v1166 = v1165:FindFirstChild(u1.SelectPart or "Head") or v1165:FindFirstChild("Head") or v1165:FindFirstChildWhichIsA("BasePart")
+
+					if not v1166 then
+						return
+					end
+
+					if u1.WallBang or not u61.IsBehindWall(HumanoidRootPart.Position, v1166.Position) then
+						u61.TargetAim = v1165
+						pcall(function()
+							-- upvalues: u1163 (ref)
+							u1163:Activate()
+						end)
+
+						return
+					end
+				end)
+
+				if not u1.AutoShot then
+					return
+				end
+
+				wait2(v867)
+			end
+		end
+
+		t22.AutoShot = u234
+
+		local _ = {
+			gui = nil,
+			bg = nil,
+			thumb = nil,
+			active = nil,
+			dir = Vector2.zero,
+			inCar = false
+		}
+
+		function u236()
+			-- upvalues: u1 (ref)
+			return u1.VehicleControlMode or "PC"
+		end
+		function u237()
+			-- upvalues: u236 (ref), u1 (ref)
+			if not u1.VehicleJoystick then
+				return false
+			end
+
+			return u236() == "Mobile"
+		end
+		function u238()
+			-- upvalues: new (ref), u234 (ref), u237 (ref), PlayerGui (ref), new2 (ref)
+			if u234.gui then
+				return
+			end
+
+			if not u237() then
+				return
+			end
+
+			local v868 = new("ScreenGui")
+
+			v868.Name = "VehicleJoystick"
+			v868.ResetOnSpawn = false
+			v868.IgnoreGuiInset = true
+			v868.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			v868.DisplayOrder = 100
+			v868.Parent = gethui and gethui() or PlayerGui
+			u234.gui = v868
+
+			local v869 = new("Frame")
+
+			v869.Name = "Background"
+
+			local n111 = 160
+
+			v869.Size = UDim2.fromOffset(n111, n111)
+			v869.Position = UDim2.new(0, 40, 1, -200)
+
+			local n112 = 20
+
+			v869.BackgroundColor3 = Color3.fromRGB(n112, n112, n112)
+			v869.BackgroundTransparency = 0.4
+			v869.BorderSizePixel = 0
+			v869.Active = true
+			v869.Parent = v868
+			u234.bg = v869
+			new("UICorner", v869).CornerRadius = UDim.new(1, 0)
+
+			local v872 = new("Frame")
+
+			v872.Name = "Thumb"
+
+			local n113 = 65
+
+			v872.Size = UDim2.fromOffset(n113, n113)
+
+			local n114 = 0.5
+
+			v872.AnchorPoint = new2(n114, n114)
+
+			local n115 = 0.5
+
+			v872.Position = UDim2.fromScale(n115, n115)
+
+			local n116 = 255
+
+			v872.BackgroundColor3 = Color3.fromRGB(n116, n116, n116)
+			v872.BackgroundTransparency = 0.1
+			v872.BorderSizePixel = 0
+			v872.Parent = v869
+			u234.thumb = v872
+			new("UICorner", v872).CornerRadius = UDim.new(1, 0)
+			v869.InputBegan:Connect(function(input)
+				-- upvalues: u234 (ref)
+				if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+					u234.active = input
+					js_MoveThumb(input.Position)
+				end
+			end)
+		end
+		function u239()
+			-- upvalues: u234 (ref)
+			if u234.gui then
+				u234.gui:Destroy()
+
+				local v877 = u234
+
+				v877.gui = nil
+				v877.bg = nil
+				v877.thumb = nil
+				v877.dir = Vector2.zero
+				v877.active = nil
+			end
+		end
+		function js_MoveThumb(p95)
+			-- upvalues: u1 (ref), u234 (ref)
+			if not u234.bg or not u234.bg.Parent or not u234.thumb or not u234.thumb.Parent then
+				return
+			end
+
+			local v879 = u234
+			local v880 = v879.bg.AbsolutePosition + v879.bg.AbsoluteSize / 2
+			local vector2 = Vector2.new(p95.X - v880.X, p95.Y - v880.Y)
+			local v882 = u1.VehicleJoystickRadius or 55
+			local v883 = math.min(vector2.Magnitude, v882)
+
+			if v883 > 8 then
+				local Unit = vector2.Unit
+				local n117 = 0.5
+
+				u234.thumb.Position = UDim2.fromScale(n117, n117) + UDim2.fromOffset(Unit.X * v883, Unit.Y * v883)
+				u234.dir = Vector2.new(Unit.X, Unit.Y)
+			else
+				local v886 = u234
+
+				v886.dir = Vector2.zero
+
+				local n118 = 0.5
+
+				v886.thumb.Position = UDim2.fromScale(n118, n118)
+			end
+		end
+
+		UserInputService.InputChanged:Connect(function(input)
+			-- upvalues: u234 (ref)
+			if u234.active and (input == u234.active or input.UserInputType == Enum.UserInputType.MouseMovement) then
+				js_MoveThumb(input.Position)
+			end
+		end)
+		UserInputService.InputEnded:Connect(function(input)
+			-- upvalues: u234 (ref)
+			if input == u234.active or input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				if u234.thumb then
+					local n119 = 0.5
+
+					u234.thumb.Position = UDim2.fromScale(n119, n119)
+				end
+
+				local v891 = u234
+
+				v891.dir = Vector2.zero
+				v891.active = nil
+			end
+		end)
+		spawn(function()
+			-- upvalues: u238 (ref), u237 (ref), u109 (ref), u234 (ref), HumanoidRootPart (ref), wait2 (ref), u239 (ref)
+			while wait2(0.1) do
+				pcall(function()
+					-- upvalues: u239 (ref), u238 (ref), u234 (ref), HumanoidRootPart (ref), u237 (ref), u109 (ref)
+					local v1168 = u109.get_car_player_is_in() ~= nil
+
+					if v1168 and not u234.inCar then
+						u234.inCar = true
+					elseif not v1168 and u234.inCar then
+						u234.inCar = false
+						u239()
+
+						if HumanoidRootPart then
+							local v1169 = HumanoidRootPart
+							local _Vector3 = Vector3
+
+							v1169.AssemblyLinearVelocity = _Vector3.zero
+							v1169.AssemblyAngularVelocity = _Vector3.zero
+						end
+					end
+
+					if u234.inCar and u237() then
+						if not u234.gui then
+							u238()
+						end
+					elseif u234.gui then
+						u239()
+					end
+				end)
+			end
+		end)
+		RunService.Heartbeat:Connect(function(dt)
+			-- upvalues: u109 (ref), Camera (ref), u236 (ref), new4 (ref), u1 (ref), u234 (ref)
+			if not u234.inCar then
+				return
+			end
+
+			if u236() ~= "Mobile" then
+				return
+			end
+
+			local u894 = u109.get_car_player_is_in()
+
+			if not u894 then
+				return
+			end
+
+			local PrimaryPart = u894.PrimaryPart
+
+			if not PrimaryPart then
+				return
+			end
+
+			if u234.dir.Magnitude < 0.05 then
+				local AssemblyLinearVelocity = PrimaryPart.AssemblyLinearVelocity
+				local n120 = 0
+
+				PrimaryPart.AssemblyLinearVelocity = new4(n120, AssemblyLinearVelocity.Y, n120)
+
+				return
+			end
+
+			pcall(function()
+				-- upvalues: u234 (ref), u894 (ref), new4 (ref), PrimaryPart (ref), dt (ref), u1 (ref), Camera (ref)
+				local v1171 = u1.VehicleJoystickSpeed or 35
+				local v1172 = u1.VehicleJoystickTurn or 14
+				local CameraCFrame = Camera.CFrame
+				local vector3 = Vector3.new(CameraCFrame.LookVector.X, 0, CameraCFrame.LookVector.Z)
+				local vector3_2 = Vector3.new(CameraCFrame.RightVector.X, 0, CameraCFrame.RightVector.Z)
+
+				if vector3.Magnitude < 0.01 then
+					local n121 = 0
+
+					vector3 = Vector3.new(n121, n121, -1)
+				end
+
+				local Unit = vector3.Unit
+				local Unit2 = vector3_2.Unit
+				local v1179 = u234
+				local v1180 = Unit * -v1179.dir.Y + Unit2 * v1179.dir.X
+
+				if v1180.Magnitude < 0.01 then
+					return
+				end
+
+				local Unit3 = v1180.Unit
+				local PrimaryPartCFrame = PrimaryPart.CFrame
+				local vector3_3 = Vector3.new(PrimaryPartCFrame.LookVector.X, 0, PrimaryPartCFrame.LookVector.Z)
+				local v1184 = u234.dir.Y > 0.3 and vector3_3 or Unit3
+
+				if v1184.Magnitude < 0.01 then
+					v1184 = vector3_3
+				end
+
+				local Unit4 = v1184.Unit
+				local lookAt = CFrame.lookAt
+				local v1187 = PrimaryPart
+				local v1188 = PrimaryPartCFrame:Lerp(lookAt(v1187.Position, v1187.Position + Unit4, Vector3.yAxis), (math.min(v1172 * dt, 0.35)))
+				local vector3_4 = Vector3.new(v1188.LookVector.X, 0, v1188.LookVector.Z)
+
+				if vector3_4.Magnitude > 0.01 and vector3_3.Magnitude > 0.01 then
+					local Unit5 = vector3_4.Unit
+					local Unit6 = vector3_3.Unit
+					local v1192 = math.atan2(-Unit5.X, -Unit5.Z) - math.atan2(-Unit6.X, -Unit6.Z)
+					local v1193 = u894
+					local n122 = 0
+
+					v1193:PivotTo(CFrame.Angles(n122, v1192, n122) * v1193:GetPivot())
+				end
+
+				local v1195 = PrimaryPart
+
+				v1195.AssemblyAngularVelocity = Vector3.zero
+
+				local AssemblyLinearVelocity = v1195.AssemblyLinearVelocity
+
+				v1195.AssemblyLinearVelocity = new4(Unit3.X * v1171, AssemblyLinearVelocity.Y, Unit3.Z * v1171)
+			end)
+		end)
+		t35 = {}
+
+		local t36 = {}
+		local n123 = 255
+
+		t36.Common = Color3.fromRGB(n123, n123, n123)
+		t36.Uncommon = Color3.fromRGB(99, 255, 52)
+		t36.Rare = Color3.fromRGB(51, 170, 255)
+		t36.Epic = Color3.fromRGB(237, 44, 255)
+		t36.Legendary = Color3.fromRGB(255, 150, 0)
+		t36.Omega = Color3.fromRGB(255, 20, 51)
+		t35.RarityColors = t36
+
+		local t37 = {
+			ScanInterval = 0.5,
+			FillTransparency = 0.6,
+			OutlineTransparency = 0,
+			IncludeSelf = false,
+			ShowInBackpack = true,
+			ShowHeldOnly = false
+		}
+
+		t35.Config = t37
+
+		local function u244(p96)
+			return p96:GetAttribute("RarityName") or "Common"
+		end
+		local function u245(p97)
+			-- upvalues: t37 (ref), u244 (ref), t35 (ref)
+			if not p97 then
+				return
+			end
+
+			if not (p97:IsA("Tool") or p97:IsA("Model")) then
+				return
+			end
+
+			local v900 = u244(p97)
+			local v901 = t35.RarityColors[v900]
+
+			if not v901 then
+				local n124 = 255
+
+				v901 = Color3.fromRGB(n124, n124, n124)
+			end
+
+			local v903 = t37[p97]
+
+			if not v903 or not v903.Parent then
+				local Highlight = Instance.new("Highlight")
+
+				Highlight.Name = "RarityHighlight_Test"
+				Highlight.Adornee = p97
+				Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+				local v905 = t35
+
+				Highlight.FillTransparency = v905.Config.FillTransparency
+				Highlight.OutlineTransparency = v905.Config.OutlineTransparency
+				Highlight.FillColor = v901
+				Highlight.OutlineColor = v901
+				Highlight.Parent = p97
+				t37[p97] = Highlight
+			else
+				v903.FillColor = v901
+				v903.OutlineColor = v901
+				v903.Adornee = p97
+			end
+		end
+		local function u246(p98)
+			-- upvalues: t37 (ref)
+			local v907 = t37[p98]
+
+			if v907 then
+				v907:Destroy()
+				t37[p98] = nil
+			end
+		end
+		local function u247(p99)
+			-- upvalues: u245 (ref), Players (ref), t35 (ref)
+			if p99 == Players.LocalPlayer and not t35.Config.IncludeSelf then
+				return
+			end
+
+			local Character = p99.Character
+
+			if not Character then
+				return
+			end
+
+			for _, child in ipairs(Character:GetChildren()) do
+				if child:IsA("Tool") or child:IsA("Model") then
+					u245(child)
+				end
+			end
+
+			if t35.Config.ShowInBackpack and not t35.Config.ShowHeldOnly then
+				local Backpack2 = p99:FindFirstChild("Backpack")
+
+				if Backpack2 then
+					for _, child in ipairs(Backpack2:GetChildren()) do
+						if child:IsA("Tool") or child:IsA("Model") then
+							u245(child)
+						end
+					end
+				end
+			end
+		end
+		local function u248()
+			-- upvalues: u247 (ref), t37 (ref), Players (ref)
+			for k, v in pairs(t37) do
+				if not k.Parent or not v.Parent then
+					if v then
+						v:Destroy()
+					end
+
+					t37[k] = nil
+				end
+			end
+
+			for _, player in ipairs(Players:GetPlayers()) do
+				pcall(u247, player)
+			end
+		end
+
+		Players.PlayerAdded:Connect(function(player)
+			-- upvalues: u247 (ref)
+			player.CharacterAdded:Connect(function()
+				-- upvalues: player (ref), u247 (ref)
+				task.wait(1)
+				pcall(u247, player)
+			end)
+		end)
+		Players.LocalPlayer.CharacterAdded:Connect(function(character)
+			-- upvalues: u246 (ref), u245 (ref)
+			task.wait(1)
+			character.ChildAdded:Connect(function(child)
+				-- upvalues: u245 (ref)
+				if child:IsA("Tool") or child:IsA("Model") then
+					u245(child)
+				end
+			end)
+			character.ChildRemoved:Connect(u246)
+		end)
+
+		if Players.LocalPlayer.Character then
+			Players.LocalPlayer.Character.ChildAdded:Connect(function(child)
+				-- upvalues: u245 (ref)
+				if child:IsA("Tool") or child:IsA("Model") then
+					u245(child)
+				end
+			end)
+			Players.LocalPlayer.Character.ChildRemoved:Connect(u246)
+		end
+
+		task.spawn(function()
+			-- upvalues: u248 (ref), t35 (ref)
+			while task.wait(t35.Config.ScanInterval) do
+				pcall(u248)
+			end
+		end)
+		t35.Scan = u248
+
+		function t35.ClearAll()
+			-- upvalues: t37 (ref)
+			for k, v in pairs(t37) do
+				if v then
+					v:Destroy()
+				end
+
+				t37[k] = nil
+			end
+		end
+		function t35.List()
+			-- upvalues: t37 (ref)
+			for k, v in pairs(t37) do
+				print(v.FillColor, "|", k:GetFullName())
+			end
+		end
+		function t35.SpawnTestItem(p100, p101)
+			-- upvalues: u245 (ref), Players (ref), t35 (ref), u246 (ref)
+			local v929 = p100 or "Legendary"
+
+			if not p101 then
+				p101 = Players.LocalPlayer.Character
+
+				if p101 then
+					local n125 = 0
+
+					p101 = Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(n125, n125, -8).Position
+				end
+			end
+
+			if not p101 then
+				return
+			end
+
+			local Model = Instance.new("Model")
+
+			Model.Name = "TestItem_" .. v929
+
+			local Part = Instance.new("Part")
+			local n126 = 1
+
+			Part.Size = Vector3.new(n126, n126, n126)
+			Part.Position = p101
+			Part.Anchored = true
+
+			local v934 = t35.RarityColors[v929]
+
+			if not v934 then
+				local n127 = 1
+
+				v934 = Color3.new(n127, n127, n127)
+			end
+
+			Part.Color = v934
+			Part.Material = Enum.Material.Neon
+			Part.Parent = Model
+			Model:SetAttribute("RarityName", v929)
+			Model.PrimaryPart = Part
+			Model.Parent = workspace
+			u245(Model)
+			task.delay(10, function()
+				-- upvalues: u246 (ref), Model (ref)
+				if Model and Model.Parent then
+					local v1198 = u246
+					local v1199 = Model
+
+					v1198(v1199)
+					v1199:Destroy()
+				end
+			end)
+
+			return Model
+		end
+		function t35.SetRarityColor(p102, p103)
+			-- upvalues: t35 (ref)
+			t35.RarityColors[p102] = p103
+		end
+
+		getgenv().ESP_Rarity = t35
+		getgenv().ItemHighlightTest = t35
+
+		function t35()
+			-- upvalues: PlayerGui (ref)
+			local ScreenGui = Instance.new("ScreenGui")
+
+			ScreenGui.Name = "SunixiaIntro"
+			ScreenGui.ResetOnSpawn = false
+			ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			ScreenGui.DisplayOrder = 2147483646
+			ScreenGui.IgnoreGuiInset = true
+			ScreenGui.Parent = gethui and gethui() or PlayerGui
+
+			local Frame = Instance.new("Frame")
+			local n128 = 8
+
+			Frame.BackgroundColor3 = Color3.fromRGB(n128, n128, n128)
+			Frame.BackgroundTransparency = 1
+			Frame.BorderSizePixel = 0
+
+			local n129 = 1
+
+			Frame.Size = UDim2.fromScale(n129, n129)
+			Frame.Parent = ScreenGui
+
+			local TextLabel = Instance.new("TextLabel")
+			local n130 = 0.5
+
+			TextLabel.AnchorPoint = Vector2.new(n130, n130)
+
+			local n131 = 0.5
+
+			TextLabel.Position = UDim2.fromScale(n131, n131)
+			TextLabel.Size = UDim2.fromScale(0.8, 0.2)
+			TextLabel.BackgroundTransparency = 1
+
+			local v945 = true
+
+			TextLabel.RichText = v945
+			TextLabel.TextScaled = v945
+			TextLabel.Text = ""
+			TextLabel.FontFace = Font.new("rbxassetid://12187365364", Enum.FontWeight.Bold)
+			TextLabel.Parent = Frame
+
+			local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+
+			UITextSizeConstraint.MaxTextSize = 64
+			UITextSizeConstraint.MinTextSize = 14
+			UITextSizeConstraint.Parent = TextLabel
+
+			local UIScale2 = Instance.new("UIScale")
+
+			UIScale2.Scale = 0.9
+			UIScale2.Parent = TextLabel
+
+			local n132 = 40
+			local color3 = Color3.fromRGB(255, n132, n132)
+			local n133 = 0
+			local color3_2 = Color3.fromRGB(120, n133, n133)
+			local t38 = {}
+
+			for _, v954 in utf8.codes("Synixia Hub") do
+				table.insert(t38, utf8.char(v954))
+			end
+
+			local elapsed6 = os.clock()
+
+			while true do
+				local v956 = os.clock() - elapsed6
+
+				if v956 >= 4 then
+					break
+				end
+
+				local t39 = {}
+
+				for i, v in ipairs(t38) do
+					local v960 = math.clamp((v956 - (i - 1) * 0.14) / 0.3, 0, 1)
+					local v961 = color3:Lerp(color3_2, (math.sin(v956 * 4 - i * 0.7) + 1) / 2)
+					local n134 = 1
+
+					t39[i] = string.format("<font color=\"rgb(%d,%d,%d)\" transparency=\"%.2f\">%s</font>", math.round(v961.R * 255), math.round(v961.G * 255), math.round(v961.B * 255), n134 - (n134 - (n134 - v960) ^ 3), v)
+				end
+
+				TextLabel.Text = table.concat(t39)
+
+				local v963 = math.clamp(v956 / 0.4, 0, 1)
+				local v964 = math.clamp((v956 - 3.5) / 0.5, 0, 1)
+
+				TextLabel.TextTransparency = v964
+
+				local n135 = 1
+
+				Frame.BackgroundTransparency = n135 - 0.85 * v963 * (n135 - v964)
+				UIScale2.Scale = 0.9 + 0.1 * math.clamp(v956 / 1.6, 0, 1)
+				task.wait()
+			end
+
+			ScreenGui:Destroy()
+		end
+
+		t35()
+
+		local WindUI = _G.WindUI or getgenv and getgenv().WindUI
+		if not WindUI then
+			local ok, res = pcall(function()
+				return loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
+			end)
+			if ok and res then WindUI = res end
+		end
+		u250 = WindUI
+
+		local t40 = {
+			Title = "Synixia Hub - [Block spin]",
+			Author = "by Synixia",
+			Folder = "SynixiaHub",
+			Size = UserInputService.TouchEnabled and fromOffset(550, 340) or fromOffset(820, 520),
+			Theme = "Dark",
+			Transparent = true,
+			Resizable = true,
+			HideSearchBar = false,
+			ToggleKey = Enum.KeyCode.LeftAlt,
+			OpenButton = {
+				Enabled = true,
+				Title = "Synixia Hub",
+				Icon = "layout-grid",
+				Draggable = true,
+				Position = UDim2.new(0, 20, 0.5, -24)
+			}
+		}
+
+		u253 = WindUI:CreateWindow(t40)
+
+		function u253:GetState()
+			return not self.Closed
+		end
+
+		function u253:SetState(pState)
+			if pState then
+				self:Open()
+			else
+				self:Close()
+			end
+		end
+
+		function u253:SetSubtitle(pText)
+			if self.SetAuthor then
+				pcall(function() self:SetAuthor(tostring(pText)) end)
+			end
+		end
+
+		function u253:Notify(pConfig)
+			pConfig = pConfig or {}
+			pcall(function()
+				WindUI:Notify({
+					Title = pConfig.Title or "Synixia Hub",
+					Content = pConfig.Description or pConfig.Content or "",
+					Duration = pConfig.Lifetime or pConfig.Duration or 3,
+					Icon = pConfig.Icon or "info"
+				})
+			end)
+		end
+
+		function u250:Gradient(pText, pColors)
+			if typeof(pText) == "string" and typeof(pColors) == "table" and #pColors > 0 then
+				local color = pColors[1]
+				if typeof(color) == "Color3" then
+					return string.format("<font color="#%s">%s</font>", color:ToHex(), pText)
+				end
+			end
+			return pText
+		end
+
+		local ScreenGui = Instance.new("ScreenGui")
+
+		ScreenGui.Name = "AexionToggleButton"
+		ScreenGui.ResetOnSpawn = false
+		ScreenGui.ZIndexBehavior = _Enum.ZIndexBehavior.Sibling
+		ScreenGui.DisplayOrder = 2147483647
+		ScreenGui.IgnoreGuiInset = true
+		ScreenGui.Parent = gethui and gethui() or PlayerGui
+		ImageButton = Instance.new("ImageButton")
+		ImageButton.Name = "ToggleButton"
+		ImageButton.Image = "rbxassetid://102698274674617"
+
+		local n136 = 48
+
+		ImageButton.Size = UDim2.fromOffset(n136, n136)
+		ImageButton.Position = UDim2.new(0, 20, 0.5, -24)
+		ImageButton.BackgroundTransparency = 1
+		ImageButton.BorderSizePixel = 0
+		ImageButton.AutoButtonColor = false
+		ImageButton.Active = true
+		ImageButton.Draggable = false
+		ImageButton.Parent = ScreenGui
+
+		local UICorner = Instance.new("UICorner")
+
+		UICorner.CornerRadius = UDim.new(1, 0)
+		UICorner.Parent = ImageButton
+		UIScale = Instance.new("UIScale")
+		UIScale.Scale = 1
+		UIScale.Parent = ImageButton
+		u259 = false
+		u260 = nil
+		u261 = nil
+		u262 = false
+
+		function u263(p104)
+			-- upvalues: ImageButton (ref)
+			local ViewportSize = workspace.CurrentCamera.ViewportSize
+			local AbsoluteSize = ImageButton.AbsoluteSize
+
+			if AbsoluteSize.X <= 0 then
+				local n137 = 48
+
+				AbsoluteSize = Vector2.new(n137, n137)
+			end
+
+			local XOffset = p104.X.Offset
+			local YOffset = p104.Y.Offset
+			local v972 = ViewportSize.X - AbsoluteSize.X
+			local v973 = ViewportSize.Y - AbsoluteSize.Y
+
+			if XOffset < 0 then
+				XOffset = 0
+			end
+
+			if YOffset < 0 then
+				YOffset = 0
+			end
+
+			if v972 < XOffset then
+				XOffset = v972
+			end
+
+			if v973 < YOffset then
+				YOffset = v973
+			end
+
+			local n138 = 0
+
+			return UDim2.new(n138, XOffset, n138, YOffset)
+		end
+
+		ImageButton.InputBegan:Connect(function(input)
+			-- upvalues: u260 (ref), u259 (ref), u262 (ref), u261 (ref), ImageButton (ref)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				u259 = true
+				u262 = false
+				u260 = input.Position
+				u261 = ImageButton.Position
+			end
+		end)
+		ImageButton.InputChanged:Connect(function(input)
+			-- upvalues: u262 (ref), u263 (ref), u260 (ref), u261 (ref), ImageButton (ref), u259 (ref)
+			if u259 and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+				local v977 = input.Position - u260
+
+				if math.abs(v977.X) > 3 or math.abs(v977.Y) > 3 then
+					u262 = true
+				end
+
+				local v978 = u261
+				local v979 = v978.X.Offset + v977.X
+				local v980 = v978.Y.Offset + v977.Y
+				local n139 = 0
+
+				ImageButton.Position = u263(UDim2.new(n139, v979, n139, v980))
+			end
+		end)
+		UserInputService.InputEnded:Connect(function(input)
+			-- upvalues: u253 (ref), u259 (ref), u262 (ref), ImageButton (ref), u263 (ref)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and u259 then
+				u259 = false
+
+				if not u262 then
+					local State = u253:GetState()
+
+					u253:SetState(not State)
+				end
+
+				local v984 = ImageButton
+
+				v984.Position = u263(v984.Position)
+			end
+		end)
+		UserInputService.InputChanged:Connect(function(_)
+			-- upvalues: u263 (ref), u259 (ref), ImageButton (ref)
+			if not u259 then
+				local v986 = ImageButton
+
+				v986.Position = u263(v986.Position)
+			end
+		end)
+		ImageButton.MouseEnter:Connect(function()
+			-- upvalues: UIScale (ref)
+			game:GetService("TweenService"):Create(UIScale, TweenInfo.new(0.15, Enum.EasingStyle.Sine), {
+				Scale = 1.12
+			}):Play()
+		end)
+		ImageButton.MouseLeave:Connect(function()
+			-- upvalues: UIScale (ref)
+			game:GetService("TweenService"):Create(UIScale, TweenInfo.new(0.15, Enum.EasingStyle.Sine), {
+				Scale = 1
+			}):Play()
+		end)
+		workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+			-- upvalues: u263 (ref), ImageButton (ref)
+			local v987 = ImageButton
+
+			v987.Position = u263(v987.Position)
+		end)
+
+		local tabIconMap = {
+			General = "layout-grid",
+			Aimbot = "crosshair",
+			Visual = "eye",
+			Marketplace = "shopping-cart",
+			LocalPlayers = "user",
+			Vehicle = "car",
+			Setting = "settings"
+		}
+
+		function u253:TabGroup(groupName)
+			return {
+				Tab = function(_, pConfig)
+					pConfig = pConfig or {}
+					local tabName = pConfig.Name or pConfig.Title or "Tab"
+					local tabIcon = pConfig.Icon or tabIconMap[tabName] or "folder"
+
+					local realTab = u253:Tab({
+						Title = tabName,
+						Icon = tabIcon
+					})
+
+					return realTab
+				end
+			}
+		end
+
+		local t41 = {
+			General = u253:TabGroup("General"),
+			Combat = u253:TabGroup("Combat"),
+			MarketPlace = u253:TabGroup("MarketPlace"),
+			Client = u253:TabGroup("Client"),
+			Vehicle = u253:TabGroup("Vehicle"),
+			Configuration = u253:TabGroup("Configuration")
+		}
+
+		v3 = {
+			General = t41.General:Tab({
+				Name = "General",
+				Selected = true
+			}),
+			Aimbot = t41.Combat:Tab({
+				Name = "Aimbot"
+			}),
+			Visual = t41.Combat:Tab({
+				Name = "Visual"
+			}),
+			Marketplace = t41.MarketPlace:Tab({
+				Name = "Marketplace"
+			}),
+			LocalPlayers = t41.Client:Tab({
+				Name = "LocalPlayers"
+			}),
+			Vehicle = t41.Vehicle:Tab({
+				Name = "Vehicle"
+			}),
+			Setting = t41.Configuration:Tab({
+				Name = "Setting"
+			})
+		}
+
+		-- Ensure first tab (General) is selected and containers are displayed
+		task.spawn(function()
+			task.wait(0.1)
+			pcall(function()
+				if u253.SelectTab then
+					u253:SelectTab(1)
+				end
+			end)
+		end)
+
+		function v266(p106, p107, p108)
+			local sec = p106:Section({
+				Title = p107 or "",
+				Desc = p108 or "",
+				Opened = true,
+				Box = true
+			})
+
+			local wrapped = setmetatable({
+				_raw = sec,
+				Paragraph = function(self, cfg)
+					return sec:Paragraph({
+						Title = cfg.Header or cfg.Title or "",
+						Desc = cfg.Body or cfg.Desc or ""
+					})
+				end,
+				Label = function(self, cfg)
+					return sec:Paragraph({
+						Title = cfg.Text or cfg.Title or "N/A",
+						Desc = ""
+					})
+				end,
+				Input = function(self, cfg)
+					return sec:Input({
+						Title = cfg.Name or cfg.Title or "Input",
+						Desc = cfg.Desc or "",
+						Placeholder = cfg.Placeholder or "...",
+						Value = cfg.Default and tostring(cfg.Default) or "",
+						Callback = cfg.Callback
+					})
+				end,
+				Keybind = function(self, cfg)
+					local def = cfg.Default
+					if typeof(def) == "EnumItem" then
+						def = def.Name
+					end
+					return sec:Keybind({
+						Title = cfg.Name or cfg.Title or "Keybind",
+						Desc = cfg.Desc or "",
+						Value = tostring(def or "F"),
+						Callback = cfg.Callback
+					})
+				end,
+				Button = function(self, cfg)
+					return sec:Button({
+						Title = cfg.Name or cfg.Title or "Button",
+						Desc = cfg.Desc or "",
+						Callback = cfg.Callback
+					})
+				end,
+				Toggle = function(self, cfg)
+					return sec:Toggle({
+						Title = cfg.Name or cfg.Title or "Toggle",
+						Desc = cfg.Desc or "",
+						Value = cfg.Default ~= nil and cfg.Default or false,
+						Callback = cfg.Callback
+					})
+				end,
+				Slider = function(self, cfg)
+					return sec:Slider({
+						Title = cfg.Name or cfg.Title or "Slider",
+						Desc = cfg.Desc or "",
+						Step = cfg.Round or cfg.Step or 1,
+						Value = {
+							Min = cfg.Minimum or cfg.Min or 1,
+							Max = cfg.Maximum or cfg.Max or 100,
+							Default = cfg.Default or cfg.Minimum or 1
+						},
+						Callback = cfg.Callback
+					})
+				end,
+				Dropdown = function(self, cfg)
+					return sec:Dropdown({
+						Title = cfg.Name or cfg.Title or "Dropdown",
+						Desc = cfg.Desc or "",
+						Values = cfg.Options or cfg.Values or {},
+						Value = cfg.Default or (cfg.Options and cfg.Options[1]),
+						Multi = cfg.Multi or false,
+						Callback = cfg.Callback
+					})
+				end
+			}, {
+				__index = function(_, k)
+					return sec[k]
+				end
+			})
+
+			return wrapped
+		end
+
+		local function v267(p109, p110, p111)
+			local u998 = p109:Paragraph({
+				Title = p110 or "N/A",
+				Desc = p111 or ""
+			})
+
+			return setmetatable({
+				_elem = u998,
+				UpdateName = function(_, txt)
+					if u998.SetTitle then
+						u998:SetTitle(tostring(txt))
+					elseif u998.ParagraphFrame and u998.ParagraphFrame.SetTitle then
+						u998.ParagraphFrame:SetTitle(tostring(txt))
+					end
+				end
+			}, {
+				__index = function(_, p113)
+					if p113 == "Text" then
+						return nil
+					end
+					return u998[p113]
+				end,
+				__newindex = function(p114, p115, p116)
+					if p115 == "Text" then
+						if u998.SetTitle then
+							u998:SetTitle(tostring(p116))
+						elseif u998.ParagraphFrame and u998.ParagraphFrame.SetTitle then
+							u998.ParagraphFrame:SetTitle(tostring(p116))
+						end
+					else
+						rawset(p114, p115, p116)
+					end
+				end,
+				__call = function(_, fn)
+					if typeof(fn) == "function" then
+						spawn(fn)
+					end
+				end
+			})
+		end
+
+		function v268(p117, p118, p119, p120, p121)
+			-- upvalues: spawn (ref), u1 (ref), t22 (ref), cancel (ref)
+			local u1006 = nil
+			local v1007 = u1[p120]
+
+			if v1007 == nil then
+				v1007 = false
+			end
+
+			local u1008 = p117:Toggle({
+				Title = p118,
+				Desc = p119 or "",
+				Value = v1007,
+				Callback = function(p122)
+					-- upvalues: p121 (ref), t22 (ref), spawn (ref), u1006 (ref), cancel (ref), u1 (ref), p120 (ref)
+					u1[p120] = p122
+
+					if p121 and typeof(p121) == "function" then
+						p121(p122)
+					end
+
+					if not p122 and u1006 then
+						cancel(u1006)
+						u1006 = nil
+					end
+
+					if p122 and t22[p120] then
+						u1006 = spawn(xpcall, t22[p120], warn)
+					end
+				end
+			})
+
+			return setmetatable({
+				_elem = u1008,
+				GetState = function(_)
+					return u1008.Value
+				end,
+				UpdateState = function(_, val)
+					if u1008.Set then
+						u1008:Set(val)
+					else
+						u1008.Value = val
+					end
+				end
+			}, {
+				__index = function(_, p124)
+					if p124 == "Value" then
+						return u1008.Value
+					end
+					return u1008[p124]
+				end,
+				__newindex = function(p125, p126, p127)
+					if p126 == "Value" then
+						if u1008.Set then
+							u1008:Set(p127)
+						else
+							u1008.Value = p127
+						end
+					else
+						rawset(p125, p126, p127)
+					end
+				end
+			})
+		end
+
+		function v269(p128, p129, p130, p131, p132)
+			-- upvalues: spawn (ref), u1 (ref), t22 (ref)
+			local v1015 = p131 or {}
+			local defVal = v1015[1]
+			local v1017 = u1[p132]
+
+			if v1017 ~= nil then
+				for _, v in ipairs(v1015) do
+					if v == v1017 then
+						defVal = v
+						break
+					end
+				end
+			end
+
+			return p128:Dropdown({
+				Title = p129,
+				Desc = p130 or "",
+				Values = v1015,
+				Value = defVal,
+				Multi = false,
+				Callback = function(p133)
+					-- upvalues: t22 (ref), u1 (ref), p132 (ref), spawn (ref)
+					u1[p132] = p133
+
+					if t22[p132] then
+						spawn(xpcall, t22[p132], warn)
+					end
+				end
+			})
+		end
+
+		function v270(p134, p135, p136, p137, p138)
+			-- upvalues: u1 (ref)
+			local v1026 = u1[p137]
+
+			if v1026 == nil then
+				v1026 = p138
+			end
+
+			return p134:Input({
+				Title = p135,
+				Desc = p136 or "",
+				Placeholder = "...",
+				Value = v1026 and tostring(v1026) or "",
+				Callback = function(p139)
+					-- upvalues: p137 (ref), u1 (ref)
+					u1[p137] = tostring(p139)
+				end
+			})
+		end
+
+		function v271(p140, _, p142)
+			return {
+				Add = function(p143, p144, _, p146)
+					p140:Button({
+						Title = p144 or "Button",
+						Desc = p142 or "",
+						Callback = p146 or function() end
+					})
+
+					return p143
+				end
+			}
+		end
+
+		function v272(p147, p148, p149, p150, p151, p152, p153, p154)
+			-- upvalues: u1 (ref)
+			local v1041 = p150 or 1
+			local v1042 = p151 or 1
+			local v1043 = u1[p153] or p152 or v1041
+
+			return p147:Slider({
+				Title = p148,
+				Desc = p149 or "",
+				Step = 1,
+				Value = {
+					Min = v1041,
+					Max = v1042,
+					Default = v1043
+				},
+				Callback = function(p155)
+					-- upvalues: p154 (ref), u1 (ref), p153 (ref)
+					u1[p153] = p155
+
+					if p154 and typeof(p154) == "function" then
+						p154(p155)
+					end
+				end
+			})
+		end
+
+		function v273(p156, p157, p158, p159, p160, p161)
+			-- upvalues: u1 (ref)
+			local v1051 = p159 or {}
+
+			if p161 then
+				local v1052 = u1[p160]
+
+				if type(v1052) ~= "table" then
+					v1052 = {}
+				end
+
+				return p156:Dropdown({
+					Title = p157,
+					Desc = p158 or "",
+					Values = v1051,
+					Value = v1052,
+					Multi = true,
+					Callback = function(p162)
+						-- upvalues: p160 (ref), u1 (ref)
+						local t42 = {}
+
+						if type(p162) == "table" then
+							for k, v in pairs(p162) do
+								if type(k) == "string" and v == true then
+									table.insert(t42, k)
+								elseif type(k) == "number" and type(v) == "string" then
+									table.insert(t42, v)
+								end
+							end
+						elseif p162 ~= nil then
+							table.insert(t42, p162)
+						end
+
+						u1[p160] = t42
+					end
+				})
+			end
+
+			local n141 = v1051[1]
+			local v1054 = u1[p160]
+
+			if v1054 ~= nil then
+				for _, v in ipairs(v1051) do
+					if v == v1054 then
+						n141 = v
+
+						break
+					end
+				end
+			end
+
+			return p156:Dropdown({
+				Title = p157,
+				Desc = p158 or "",
+				Values = v1051,
+				Value = n141,
+				Multi = false,
+				Callback = function(p163)
+					-- upvalues: p160 (ref), u1 (ref)
+					u1[p160] = p163
+				end
+			})
+		end
+
+		local v274 = v266(v3.General, "User Networth", "Total cash: on hand & in your ATM.")
+
+		u275 = v267(v274, "ATM Balance", "Total funds in your ATM.")
+
+		local v276 = v267(v274, "Hand Balance", "Total funds in your account.")
+
+		u277 = v276
+		v276(function()
+			-- upvalues: u275 (ref), wait2 (ref), t6 (ref), Util (ref), u277 (ref)
+			while wait2(1) do
+				local v1057 = t6.GetMoney()
+
+				u275.Text = Util.comma_format_number(v1057.bank) .. "$"
+				u277.Text = Util.comma_format_number(v1057.hand) .. "$"
+			end
+		end)
+
+		local v278 = v266(v3.General, "Auto Rejoin", "Automatic to rejoin when time is enough.")
+
+		s10 = "RejoinTime"
+		v272(v278, "Rejoin Time", "Select Rejoin Time (Hour)", 1, 4, u1.RejoinTime or 1, s10)
+		v268(v278, "Auto Rejoin", "Enabled to Automatic Rejoin", "AutoRejoin")
+
+		local v280 = v266(v3.General, "ATM Action", "You can do all action with atm when you near atm.")
+
+		v270(v280, "Enter Money", "Money amount to action with atm.", "MoneyActionATM")
+		v271(v280, "ATM Money", "You can withdraw and deposit but need to near atm."):Add("Deposit", "Primary", function()
+			-- upvalues: u1 (ref), u75 (ref)
+			u75.get("transfer_funds", "hand", "bank", tonumber(u1.MoneyActionATM))
+		end):Add("Withdraw", "Primary", function()
+			-- upvalues: u1 (ref), u75 (ref)
+			u75.get("transfer_funds", "bank", "hand", tonumber(u1.MoneyActionATM))
+		end)
+	end
+
+	local num = nil
+	local u282 = false
+	local Text = nil
+
+	local function u284()
+		-- upvalues: PlayerGui (ref)
+		local TopRightHud = PlayerGui:FindFirstChild("TopRightHud")
+		local v1059 = TopRightHud and TopRightHud:FindFirstChild("Holder")
+		local v1060 = v1059 and v1059:FindFirstChild("Frame")
+
+		if not v1060 then
+			return nil
+		end
+
+		local v1061 = v1060:GetChildren()[10]
+
+		if v1061 and (v1061:IsA("TextLabel") or v1061:IsA("TextButton")) then
+			return v1061
+		end
+
+		return nil
+	end
+	local function u285()
+		-- upvalues: Text (ref), u284 (ref), num (ref)
+		local v1062 = u284()
+
+		if not v1062 or num == nil then
+			return
+		end
+
+		if Text == nil then
+			Text = v1062.Text
+		end
+
+		v1062.Text = tostring(num)
+	end
+	local function u286()
+		-- upvalues: Text (ref), u284 (ref)
+		local v1063 = u284()
+
+		if v1063 and Text ~= nil then
+			v1063.Text = Text
+		end
+
+		Text = nil
+	end
+
+	s10(function()
+		-- upvalues: u285 (ref), wait2 (ref), u282 (ref)
+		while wait2(0.2) do
+			if u282 then
+				pcall(u285)
+			end
+		end
+	end)
+
+	local v287 = v266(v3.Visual, "Fake Money", "Change the cash shown on HUD (visual only).")
+
+	v287:Input({
+		Name = "Amount",
+		Placeholder = "100000000",
+		AcceptedCharacters = "All",
+		Callback = function(p164)
+			-- upvalues: num (ref)
+			num = tonumber(p164)
+		end
+	})
+	v271(v287, "Fake Money", "Confirm to apply, Reset to restore."):Add("Confirm", "Primary", function()
+		-- upvalues: u284 (ref), num (ref), u253 (ref), u282 (ref), u285 (ref)
+		if num == nil then
+			u253:Notify({
+				Title = "Fake Money",
+				Description = "Please enter a valid number.",
+				Lifetime = 3
+			})
+
+			return
+		end
+
+		if not u284() then
+			u253:Notify({
+				Title = "Fake Money",
+				Description = "HUD label not found.",
+				Lifetime = 3
+			})
+
+			return
+		end
+
+		u282 = true
+		pcall(u285)
+	end):Add("Reset", "Primary", function()
+		-- upvalues: u286 (ref), u282 (ref)
+		u282 = false
+		pcall(u286)
+	end)
+
+	local v288 = v266(v3.General, "Job Farm", "Automatic to Farm Job.")
+
+	v269(v288, "Select Job", "Select Job to work.", {
+		"Steak",
+		"Shelf Stock",
+		"Janitor"
+	}, "SelectJob")
+	v268(v288, "Auto Job", "Automatic to farm job you selected.", "AutoJob")
+
+	local v289 = v266(v3.General, "Setting", "Setting Job Farm.")
+
+	v270(v289, "Enter Money Amount", "Amount to deposit when farm Job.", "MoneyDespoit", 250)
+
+	local n142 = 1
+
+	v272(v289, "Tween Speed", "Speed when your Character is tweening.", n142, 55, n142, "TweenSpeed")
+
+	local n143 = 1
+
+	v272(v289, "Vehicle Speed", "Speed when your Vehicle is tweening.", n143, 150, n143, "VehicleSpeed")
+
+	local v292 = v266(v3.Aimbot, "Aim assistant", "A smart aim assistant.")
+
+	v268(v292, "Silent Aim", "Prediction target head for aim assist.", "AimAssist")
+	v268(v292, "Wall Bang", "Can shoot when behind wall.", "WallBang")
+
+	local v293 = v266(v3.Aimbot, "Setting", "Configuration settings.")
+
+	v268(v293, "Ignore Friend", "Aimbot ignores your friend.", "IgnoreFriend")
+
+	local s11 = "MultiShot"
+
+	v268(v293, s11, "When you shoot you will lose x2 ammo.", s11)
+	v269(v293, "Select Part", "Part when aim assist working.", {
+		"Head",
+		"UpperTorso",
+		"HumanoidRootPart"
+	}, "SelectPart")
+	v269(v293, "Select Position", "Position of pov circle.", {
+		"Cursor",
+		"Screen"
+	}, "SelectPositionFov")
+
+	local n144 = 200
+
+	v272(v293, "FOV Radius", "FOV radius.", n144, 800, n144, "FOVRadius")
+
+	local v296 = v266(v3.Aimbot, "Gun Modifier", "Modifies your gun.")
+
+	v271(v296, "Customize Your Gun", "Personalize your weapon. (Need to Equip!)"):Add("Modify", "Primary", function()
+		-- upvalues: u1 (ref), Char (ref)
+		local v1065 = Char.get_tool()
+
+		if v1065 and v1065:HasTag("Gun") then
+			v1065:SetAttribute("fire_rate", u1.FireRateGun or v1065:GetAttribute("fire_rate"))
+			v1065:SetAttribute("accuracy", u1.AccuracyGun or v1065:GetAttribute("accuracy"))
+			v1065:SetAttribute("Recoil", u1.RecoilGun or v1065:GetAttribute("Recoil"))
+			v1065:SetAttribute("Durability", u1.DurabilityGun or v1065:GetAttribute("Durability"))
+
+			return
+		end
+	end)
+
+	local n145 = 1
+
+	v272(v296, "Fire rate", "Fire rate when you shoot your gun.", n145, 3000, n145, "FireRateGun")
+
+	local n146 = 0
+
+	v272(v296, "Recoil", "Recoil when you shoot.", n146, 10, n146, "RecoilGun")
+
+	local n147 = 0.1
+
+	v272(v296, "Accuracy", "Accuracy of your gun.", n147, 1, n147, "AccuracyGun")
+
+	local n148 = 1
+
+	v272(v296, "Durability", "Durability of your gun.", n148, 100, n148, "DurabilityGun")
+
+	local v301 = v266(v3.Aimbot, "Auto Shot", "Automatically fires at the nearest target in a screen-space radius.")
+
+	v268(v301, "Auto Shot", "เปิด/ปิดการยิงอัตโนมัติ", "AutoShot")
+	v272(v301, "Detection Radius", "รัศมีตรวจจับเป้าหมายบนหน้าจอ (พิกเซล)", 50, 800, 150, "AutoShotRadius")
+	v272(v301, "Fire Interval", "ช่วงเวลาระหว่างการยิงแต่ละรอบ (วินาที)", 0.05, 2, 0.15, "AutoShotInterval")
+
+	local v302 = v266(v3.Visual, "Visual", "Customize visuals and ESP features.")
+	local s12 = "Box"
+
+	v268(v302, s12, "Draw 2D boxes around players.", s12)
+
+	local s13 = "Hpbar"
+
+	v268(v302, s13, "Display health bars above players.", s13)
+
+	local s14 = "Name"
+
+	v268(v302, s14, "Show player names.", s14)
+
+	local s15 = "Distance"
+
+	v268(v302, s15, "Show distance to players.", s15)
+	v268(v302, "Inventory Viewer", "Look at all player's inventory.", "InventoryViewer")
+	v268(v302, "ESP Rarity", "Highlight items by rarity in character/backpack", "ESP_Rarity_Enable", function(p165)
+		if p165 then
+			getgenv().ESP_Rarity.Scan()
+		else
+			getgenv().ESP_Rarity.ClearAll()
+		end
+	end)
+
+	local v307 = v266(v3.Visual, "Dropped Item", "View All Dropped Items.")
+
+	v268(v307, "Dropped Item", "View All Dropped Items in the world.", "DroppedItemVisual", nil)
+	v268(v307, "Blacklist Visual Rarity", "Blacklist Rarity Item Selected.", "BlacklistItemRarity", nil)
+	v273(v307, "Select Rarity", "Select rarity of dropped item to unshow.", {
+		"Common",
+		"Uncommon",
+		"Rare",
+		"Epic",
+		"Legendary",
+		"Omega"
+	}, "RarityVisualBlacklist", true)
+	v268(v266(v3.Visual, "Miscellaneous", "Additional visual enhancements."), "ATM Viewer", "View ATM locations in the world.", "ATMViewer", nil)
+
+	local GunShopTile = Tiles:WaitForChild("GunShopTile")
+	local PrestigeDealerAndHousing = Tiles:WaitForChild("PrestigeDealerAndHousing")
+	local v310 = v266(v3.Marketplace, "Weapon Crate", "Quickly purchase and roll for new firearms. (Must be near the shop)")
+
+	v273(v310, "Select Weapon Crate", "Choose a weapon crate.", {
+		"Basic",
+		"Advanced",
+		"Superior",
+		"Elite",
+		"Legendary"
+	}, "WeaponCrateType", false)
+	v271(v310, "Open Weapon Crate"):Add("Random", "Primary", function()
+		-- upvalues: u75 (ref), GunShopTile (ref), u1 (ref)
+		local v1067 = GunShopTile:WaitForChild("PatriotWeapons").Interior.Crates["Weapon Crate"].CrateOptions:FindFirstChild(u1.WeaponCrateType or "Basic")
+
+		u75.send("open_crate", v1067, "money")
+	end)
+
+	local v311 = v266(v3.Marketplace, "GunSmith Crate", "Acquire random weapon parts and upgrades. (Must be near the shop)")
+
+	v273(v311, "Select GunSmith Crate", "Customize your arsenal.", {
+		"Grips and Mags 1",
+		"Sights 1",
+		"Underbarrel and Barrel 1",
+		"Wraps 1",
+		"Wraps 2"
+	}, "GunSmithCrateType", false)
+	v271(v311, "Open GunSmith Crate"):Add("Random", "Primary", function()
+		-- upvalues: u75 (ref), GunShopTile (ref), u1 (ref)
+		local v1068 = GunShopTile:WaitForChild("PatriotWeapons").Interior.Crates["Gunsmith Crate"].CrateOptions:FindFirstChild(u1.GunSmithCrateType or "Grips and Mags 1")
+
+		u75.send("open_crate", v1068, "money")
+	end)
+
+	local v312 = v266(v3.Marketplace, "Ammo Crate", "Restock your ammunition supplies instantly. (Must be near the shop)")
+
+	v273(v312, "Select Ammo Crate", "Ensure you never run dry.", {
+		"Pistol",
+		"Rifle",
+		"Shotgun",
+		"Special"
+	}, "AmmoCrateType", false)
+	v271(v312, "Open Ammo Crate"):Add("Random", "Primary", function()
+		-- upvalues: u75 (ref), GunShopTile (ref), u1 (ref)
+		local v1069 = GunShopTile:WaitForChild("PatriotWeapons").Interior.Crates["Ammo Crate"].CrateOptions:FindFirstChild(u1.AmmoCrateType or "Pistol")
+
+		u75.send("open_crate", v1069, "money")
+	end)
+
+	local v313 = v266(v3.Marketplace, "Car Crate", "Test your luck for a new ride. (Requires proximity to Prestige Dealer)")
+
+	v273(v313, "Select Car Crate", "Unlock anything from daily drivers to supercars.", {
+		"Basic",
+		"Rare",
+		"Elite",
+		"Omega"
+	}, "CarCrateType", false)
+	v271(v313, "Open Car Crate"):Add("Random", "Primary", function()
+		-- upvalues: u75 (ref), PrestigeDealerAndHousing (ref), u1 (ref)
+		local v1070 = PrestigeDealerAndHousing.PrestigeCarDealer.Interior.Crates["Car Crate"].CrateOptions:FindFirstChild(u1.CarCrateType or "Basic")
+
+		u75.send("open_crate", v1070, "money")
+	end)
+
+	local v314 = v266(v3.LocalPlayers, "Humanoid Modifies", "Modify your humanoid.")
+
+	v268(v314, "Enabled Speed", "Customize your walkspeed.", "CustomSpeed")
+
+	local n149 = 0
+
+	v272(v314, "Speed", "Customize walkspeed.", n149, 3.5, n149, "CustomSpeedValue")
+	v268(v314, "Enabled JumpPower", "Customize your jumppower.", "CustomJumpPower")
+
+	local n150 = 1
+
+	v272(v314, "Jump Power", "Customize JumpPower.", n150, 25, n150, "CustomJumpPowerValue")
+
+	local v317 = v266(v3.LocalPlayers, "Snap", "Snap to underground.")
+	local s16 = "Snap"
+	local u319 = v268(v317, s16, "Snap to underground with y offset", s16, function(p166)
+		-- upvalues: n1 (ref), u51 (ref), HumanoidRootPart (ref), u1 (ref)
+		if p166 then
+			u51 = HumanoidRootPart.Position
+			n1 = u1.YOffsetSnap or 1
+
+			return
+		end
+	end)
+
+	v317:Keybind({
+		Name = "Keybind Snap",
+		Default = Enum.KeyCode.F,
+		Callback = function(p167)
+			-- upvalues: u319 (ref)
+			if p167 then
+				local v1073 = u319
+
+				v1073.Value = not v1073.Value
+			end
+		end
+	})
+
+	local n151 = 1
+
+	v272(v317, "Y Offset", "Y Offset to Snap down.", n151, 150, n151, "YOffsetSnap")
+	v271(v317, "Instant Snap"):Add("Start", "Primary", function()
+		-- upvalues: HumanoidRootPart (ref), Tween (ref), u1 (ref), new3 (ref), Humanoid (ref), u202 (ref), wait2 (ref), u75 (ref), t5 (ref), u61 (ref)
+		if u61.SnapSuccess then
+			u61.SnapSuccess = false
+		end
+
+		wait2(0.5)
+
+		repeat
+			local v1074 = u61.FindVehicle()
+
+			if v1074 then
+				if v1074:GetAttribute("VehicleType") ~= "bike" then
+					return
+				end
+
+				for _, descendant in pairs(v1074:GetDescendants()) do
+					if descendant:IsA("BasePart") then
+						descendant.AssemblyLinearVelocity = Vector3.zero
+					end
+				end
+
+				v1074:PivotTo(HumanoidRootPart.CFrame * new3(0, 5, 3))
+
+				repeat
+					wait2()
+				until u61.GetDistanceRoot(v1074.Chassis) < 7
+
+				wait2(0.4)
+
+				for _, descendant in pairs(v1074:GetDescendants()) do
+					if descendant.Name == "DrivePrompt" then
+						fireproximityprompt(descendant)
+					end
+				end
+
+				local n152 = 0
+
+				v1074:PivotTo(HumanoidRootPart.CFrame * new3(n152, n152, -3))
+
+				repeat
+					wait2()
+				until Humanoid.Sit
+
+				wait2()
+
+				local play_model = Tween.play_model
+				local tweenInfo = TweenInfo.new(0, Enum.EasingStyle.Linear)
+				local ChassisCFrame = v1074.Chassis.CFrame
+				local v1083 = new3
+				local n153 = 0
+				local v1085 = u1
+
+				play_model(v1074, tweenInfo, ChassisCFrame * v1083(n153, -v1085.YOffsetSnap, n153))
+				HumanoidRootPart.Anchored = true
+				Humanoid.Sit = false
+				wait2(0.55)
+				HumanoidRootPart.Anchored = false
+				wait2()
+
+				local n154 = 160
+
+				Tween.play_model(v1074, TweenInfo.new(0, Enum.EasingStyle.Linear), HumanoidRootPart.CFrame * new3(n154, -v1085.YOffsetSnap, n154))
+				u61.SnapSuccess = true
+			else
+				local v1087 = t5.GetItemsByType("bike")
+
+				for _, v in next, v1087 do
+					for _, v1091 in v do
+						u75.get("toggle_equip_item", v1091.guid)
+					end
+				end
+			end
+
+			wait2()
+		until u61.SnapSuccess or not HumanoidRootPart or not u61.IsAlive(u202)
+	end)
+
+	local v321 = v266(v3.LocalPlayers, "Dropped Item", "Auto to grab all dropped items.")
+
+	v268(v321, "Auto Pick Item", "Automatic to pick all dropped items.", "AutoPickDroppedItem")
+	v268(v321, "Blacklist Rarity", "Don't pick dropped item if rarity in blacklist.", "BlacklistPickDroppedItem")
+	v273(v321, "Select Rarity", "Select rarity of dropped item to not pick.", {
+		"Common",
+		"Uncommon",
+		"Rare",
+		"Epic",
+		"Legendary",
+		"Omega"
+	}, "RarityPickBlacklist", true)
+
+	local v322 = v266(v3.LocalPlayers, "Etc", "Other functions.")
+
+	v268(v322, "Anti Ragdoll", "Anti ragdoll when you get ragdolled.", "AntiRagdoll")
+	v268(v322, "Anti Kill", "Anti kill when you get downed.", "AntiKill")
+	v268(v322, "Anti Aimbot", "Anti aimbot if you encounter a hacker.", "AntiAimbot")
+	v268(v322, "Auto Respawn", "Auto Respawn when you die.", "AutoRespawn", function(p168)
+		-- upvalues: u75 (ref), PlayerGui (ref)
+		if p168 then
+			local DeathScreenHolder = PlayerGui.DeathScreen.DeathScreenHolder
+
+			if DeathScreenHolder.Visible and DeathScreenHolder.Frame.RespawnButtonFrame.RespawnButton.TextLabel.Text == "Respawn" then
+				u75.send("death_screen_request_respawn")
+			end
+		end
+	end)
+	v268(v322, "Fly Jump", "When you jump and jump again you will fly.", "FlyJump")
+	v268(v322, "Infinite Stamina", "Stamina will not load.", "InfiniteStamina")
+	v268(v322, "Hide Name (Client)", "Hide your name from screen (Client)", "HideName", function(p169)
+		-- upvalues: HumanoidRootPart (ref)
+		HumanoidRootPart:FindFirstChild("CharacterBillboardGui").Enabled = not p169
+	end)
+
+	local u323 = false
+
+	v271(v322, "Magic FOV"):Add("Start", "Primary", function()
+		-- upvalues: new2 (ref), PlayerGui (ref), spawn (ref), wait2 (ref), new (ref), u323 (ref)
+		if u323 then
+			return
+		end
+
+		local v1095 = true
+
+		u323 = v1095
+		v1095(function()
+			-- upvalues: new2 (ref), wait2 (ref), new (ref), spawn (ref), u323 (ref), PlayerGui (ref)
+			local u1223 = nil
+			local AbsoluteSize = PlayerGui.AbsoluteSize
+			local v1225 = AbsoluteSize.X / 2
+			local v1226 = AbsoluteSize.Y / 2
+			local u1227 = math.sqrt(v1225 * v1225 + v1226 * v1226)
+			local v1228 = new("Frame")
+
+			v1228.Name = "MagicFOVContainer"
+
+			local n155 = 1
+
+			v1228.Size = UDim2.fromScale(n155, n155)
+			v1228.BackgroundTransparency = 1
+			v1228.Parent = PlayerGui
+
+			local n156 = 0
+			local u1231 = n156
+
+			for i = n156, 59 do
+				u1231 = i
+
+				local v1233 = math.rad(u1231 * 6)
+
+				u1223 = new("Frame")
+				u1223.Name = "Segment_" .. u1231
+
+				local n157 = 1
+
+				u1223.BackgroundColor3 = Color3.fromHSV(u1231 / 60, n157, n157)
+				u1223.BackgroundTransparency = 0.3
+				u1223.BorderSizePixel = 0
+
+				local n158 = 0
+				local n159 = 2
+
+				u1223.Size = UDim2.new(n158, n159, n158, u1227 * n159)
+				u1223.Position = UDim2.fromOffset(v1225, v1226)
+				u1223.AnchorPoint = new2(0.5, 0)
+				u1223.Parent = v1228
+
+				local v1237 = math.deg(v1233)
+
+				u1223.Rotation = v1237
+				v1237(function()
+					-- upvalues: u323 (ref), wait2 (ref), u1231 (ref), u1223 (ref), u1227 (ref)
+					wait2(u1231 * 0.02)
+
+					local timestamp = tick()
+
+					while u323 and wait2(0.016) do
+						local v1250 = (tick() - timestamp) / 2
+
+						if v1250 >= 1 then
+							local n160 = 0
+							local n161 = 2
+
+							u1223.Size = UDim2.new(n160, n161, n160, u1227 * n161)
+
+							if not u323 then
+								return
+							end
+
+							wait2(0.1)
+
+							continue
+						end
+
+						local n162 = 0
+
+						u1223.Size = UDim2.new(n162, 2, n162, u1227 * v1250)
+					end
+				end)
+			end
+
+			wait2(3.7)
+
+			if u323 then
+				local timestamp = tick()
+
+				while u323 and wait2(0.016) do
+					local v1239 = (tick() - timestamp) / 0.4
+
+					if v1239 >= 1 then
+						v1228:Destroy()
+
+						break
+					end
+
+					local _pairs = pairs
+
+					local v1240 = v1228:GetChildren()
+
+					for _, v1242 in _pairs(v1240) do
+						v1242.BackgroundTransparency = 0.3 + v1239 * 0.7
+					end
+				end
+			end
+
+			if v1228 and v1228.Parent then
+				v1228:Destroy()
+			end
+
+			u323 = false
+		end)
+	end):Add("Stop", "Primary", function()
+		-- upvalues: PlayerGui (ref), u323 (ref)
+		u323 = false
+
+		local MagicFOVContainer = PlayerGui:FindFirstChild("MagicFOVContainer")
+
+		if MagicFOVContainer then
+			MagicFOVContainer:Destroy()
+		end
+	end)
+
+	local v324 = v266(v3.Vehicle, "General", "Additional Vehicle.")
+
+	v268(v324, "Auto Lock", "Automatically lock car.", "AutoLock")
+	v268(v324, "Bump Aura", "Automatically bump nearby players.", "BumpAura")
+	v268(v324, "No Crash", "Block crash calls while driving.", "NoCrash")
+	RunService.Heartbeat:Connect(function()
+		-- upvalues: u1 (ref), u109 (ref)
+		pcall(function()
+			-- upvalues: u109 (ref), u1 (ref)
+			local v1243 = u1
+
+			v1243.NoCrashActive = v1243.NoCrash and u109.get_car_player_is_in() and true or false
+		end)
+	end)
+	v268(v324, "Vehicle Noclip", "Drive through walls and objects, not the floor.", "VehicleNoclip")
+	v268(v324, "Noclip", "Vehicle and character pass through floor and walls.", "SnapNoclip")
+	RunService.Heartbeat:Connect(function()
+		-- upvalues: u61 (ref), u1 (ref), u202 (ref)
+		if not u1.SnapNoclip then
+			return
+		end
+
+		pcall(function()
+			-- upvalues: u202 (ref), u61 (ref), u1 (ref)
+			local v1244 = u61.FindVehicle()
+
+			if v1244 and not u1.VehicleNoclip then
+				for _, descendant in pairs(v1244:GetDescendants()) do
+					if descendant:IsA("BasePart") then
+						descendant.CanCollide = false
+					end
+				end
+			end
+
+			if u202 then
+				for _, descendant in pairs(u202:GetDescendants()) do
+					if descendant:IsA("BasePart") then
+						descendant.CanCollide = false
+					end
+				end
+			end
+		end)
+	end)
+	v271(v324, "Vehicle Action"):Add("Bomb", "Primary", function()
+		-- upvalues: u109 (ref), u75 (ref)
+		local n163 = 1
+
+		for _ = n163, 5, n163 do
+			u75.send("crashed_car", u109.get_car_player_is_in(), 150)
+		end
+	end):Add("Bring", "Primary", function()
+		-- upvalues: u202 (ref), Vehicles (ref), UserId (ref), new3 (ref)
+		if #Vehicles:GetChildren() ~= 0 then
+			for _, v in next, Vehicles:GetChildren() do
+				if v:GetAttribute("OwnerUserId") == UserId then
+					local n164 = 0
+
+					v:PivotTo(u202:GetPivot() * new3(n164, n164, 5))
+				end
+			end
+
+			return
+		end
+	end)
+
+	local v325 = v266(v3.Vehicle, "Control Mode", "Choose your driving control scheme.")
+
+	v269(v325, "Control Mode", "Mobile = มีจอยสติ๊ก | PC = ใช้ WASD ไม่มีจอย", {
+		"Mobile",
+		"PC"
+	}, "VehicleControlMode")
+	v268(v325, "Enable Joystick", "เปิด/ปิดจอย (Mobile mode เท่านั้น)", "VehicleJoystick")
+	v272(v325, "Drive Speed", "ความเร็วรถเมื่อใช้จอย", 10, 200, 35, "VehicleJoystickSpeed")
+	v272(v325, "Turn Speed", "ความเร็วการหมุนพวงมาลัย", 1, 50, 14, "VehicleJoystickTurn")
+	v272(v325, "Joystick Radius", "ระยะห่างสูงสุดของ thumb", 20, 120, 55, "VehicleJoystickRadius")
+
+	local v326 = v266(v3.Setting, "Graphic", "Reduce lag and improve your graphics.")
+	local s17 = "WhiteScreen"
+
+	v268(v326, s17, "Disable 3D Render to Reduce Lag.", s17, function(p170)
+		-- upvalues: RunService (ref)
+		RunService:Set3dRenderingEnabled(not p170)
+	end)
+	v268(v326, "High Camera Position", "Change camera position to high place.", "HighCameraPosition", function(p171)
+		-- upvalues: Humanoid (ref), Camera (ref), u120 (ref)
+		Camera.CameraSubject = p171 and u120 or Humanoid
+	end)
+	v271(v326, "Fps Booster"):Add("Start Boost", "Primary", function()
+		-- upvalues: Terrain (ref), Lighting (ref)
+		local v1104 = Lighting
+
+		v1104.GlobalShadows = false
+		v1104.FogEnd = 10000000000
+		v1104.Brightness = 2
+		v1104.ClockTime = 14
+
+		local n165 = 0
+
+		v1104.EnvironmentDiffuseScale = n165
+		v1104.EnvironmentSpecularScale = n165
+
+		local n166 = 180
+
+		v1104.OutdoorAmbient = Color3.fromRGB(n166, n166, n166)
+
+		for _, child in pairs(Lighting:GetChildren()) do
+			if child:IsA("Sky") or child:IsA("SunRaysEffect") or child:IsA("BlurEffect") or child:IsA("ColorCorrectionEffect") or child:IsA("BloomEffect") or child:IsA("DepthOfFieldEffect") then
+				child:Destroy()
+			end
+		end
+
+		if Terrain then
+			local v1109 = Terrain
+			local n167 = 0
+
+			v1109.WaterWaveSize = n167
+			v1109.WaterReflectance = n167
+			v1109.WaterTransparency = 1
+
+			local n168 = 150
+
+			v1109:SetMaterialColor(Enum.Material.Grass, Color3.fromRGB(n168, n168, n168))
+		end
+
+		for _, descendant in pairs(workspace:GetDescendants()) do
+			if descendant:IsA("BasePart") or descendant:IsA("MeshPart") then
+				descendant.Material = Enum.Material.SmoothPlastic
+
+				local n169 = 170
+
+				descendant.Color = Color3.fromRGB(n169, n169, n169)
+				descendant.Reflectance = 0
+				descendant.CastShadow = false
+			end
+
+			if descendant:IsA("Decal") or descendant:IsA("Texture") or descendant:IsA("SurfaceAppearance") then
+				descendant:Destroy()
+			end
+
+			if descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") or descendant:IsA("Beam") then
+				descendant.Enabled = false
+			end
+
+			if descendant:IsA("Accessory") or descendant:IsA("Clothing") or descendant:IsA("Shirt") or descendant:IsA("Pants") then
+				descendant:Destroy()
+			end
+
+			if descendant:IsA("Sound") then
+				descendant.Volume = 0
+				descendant:Stop()
+			end
+		end
+	end)
+	v271(v266(v3.Setting, "Server Finder", "Scan and filter game servers."), "Server", "You can find all servers with types."):Add("High Server", "Primary", function()
+		-- upvalues: u61 (ref)
+		u61.HopServer(1)
+	end):Add("Low Server", "Primary", function()
+		-- upvalues: u61 (ref)
+		u61.HopServer(2)
+	end):Add("Rejoin Current Server", "Primary", function()
+		-- upvalues: JobId (ref), TeleportService (ref), PlaceId (ref)
+		TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
+	end)
+
+	local v328 = v266(v3.Setting, "JobId", "You can join other server by jobid.")
+
+	v270(v328, "Enter JobId", "Your JobId enter here to join.", "JobIdValue")
+	v271(v328, "Action JobId", "You can do anything with Server id."):Add("Join JobId", "Primary", function()
+		-- upvalues: u1 (ref), TeleportService (ref), PlaceId (ref)
+		TeleportService:TeleportToPlaceInstance(PlaceId, u1.JobIdValue)
+	end):Add("Copy Server Id", "Primary", function()
+		-- upvalues: JobId (ref)
+		setclipboard(JobId)
+	end)
+	spawn(function()
+		-- upvalues: u250 (ref), wait2 (ref), u253 (ref)
+		local n170 = 0
+
+		while wait2(0.025) do
+			local t43 = {}
+
+			for i = 0, 6 do
+				local n171 = 1
+
+				table.insert(t43, Color3.fromHSV((i / 6 + n170) % n171, n171, n171))
+			end
+
+			u253:SetSubtitle(u250:Gradient("you are a star shining on nights away", t43))
+			n170 = (n170 + 0.018) % 1
+		end
+	end)
+	task.spawn(function()
+		task.wait(0.2)
+		pcall(function()
+			if u253.SelectTab then
+				u253:SelectTab(1)
+			end
+			if u253.Open then
+				u253:Open()
+			end
+		end)
+	end)
+
+	u253:Notify({
+		Title = "Loaded successfully",
+		Description = "If you encounter any issues, you can contact us via the Discord group.",
+		Lifetime = 3
+	})
+
+	return
+end
